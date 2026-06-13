@@ -1,0 +1,38 @@
+[
+  {
+    "id": "cert-algo1",
+    "name": {
+      "fr": "Algorithmique 1",
+      "en": "Algorithmic 1"
+    },
+    "issuer": "ATS",
+    "photo": "assets/certs/cert_algo1.jpg"
+  },
+  {
+    "id": "cert-algo2",
+    "name": {
+      "fr": "Algo & Structures de données",
+      "en": "Algorithms & Data Structures"
+    },
+    "issuer": "TUSNA",
+    "photo": "assets/certs/cert_algo2.jpg"
+  },
+  {
+    "id": "cert-python",
+    "name": {
+      "fr": "Développement de jeux en Python",
+      "en": "Python Game Development"
+    },
+    "issuer": "TUSNA",
+    "photo": "assets/certs/cert_python.jpg"
+  },
+  {
+    "id": "cert-english",
+    "name": {
+      "fr": "General English B2",
+      "en": "General English B2"
+    },
+    "issuer": "Syken College",
+    "photo": "assets/certs/cert_english.jpg"
+  }
+]

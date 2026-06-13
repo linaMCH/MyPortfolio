@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 180" width="100%" height="100%">
+  <defs>
+    <linearGradient id="gradStega" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a7f37" />
+      <stop offset="100%" stop-color="#0969da" />
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="#161b22"/>
+  <rect width="100%" height="100%" fill="url(#gradStega)" opacity="0.25"/>
+  <g stroke="#30363d" stroke-width="1" fill="none">
+    <path d="M 120,40 L 280,40 L 280,140 L 120,140 Z" stroke-dasharray="2"/>
+    <path d="M 150,60 L 250,60 L 250,120 L 150,120 Z"/>
+  </g>
+  <text x="50%" y="85%" font-family="'Inter', sans-serif" font-weight="800" font-size="20" fill="#e6edf3" text-anchor="middle">StegaCrypt</text>
+  <text x="50%" y="110%" font-family="'JetBrains Mono', monospace" font-size="11" fill="#3fb950" text-anchor="middle">&lt;Security /&gt;</text>
+</svg>

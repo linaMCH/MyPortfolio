@@ -1,0 +1,241 @@
+[
+  {
+    "category": "languages",
+    "title": {
+      "fr": "Langages de programmation",
+      "en": "Programming Languages"
+    },
+    "colorClass": "skills-languages",
+    "skills": [
+      {
+        "name": "Java",
+        "desc": {
+          "fr": "Développement orienté objet robuste, multi-threading et interfaces JavaFX.",
+          "en": "Robust object-oriented development, multi-threading, and JavaFX interfaces."
+        }
+      },
+      {
+        "name": "C++",
+        "desc": {
+          "fr": "Programmation système performante, gestion de mémoire et structures de données.",
+          "en": "High-performance system programming, memory management, and data structures."
+        }
+      },
+      {
+        "name": "C",
+        "desc": {
+          "fr": "Développement bas niveau, programmation système et systèmes embarqués.",
+          "en": "Low-level development, system programming, and embedded systems."
+        }
+      },
+      {
+        "name": "Python",
+        "desc": {
+          "fr": "Scripts d'automatisation, cybersécurité, scripting réseau et développement rapide.",
+          "en": "Automation scripts, cybersecurity, network scripting, and rapid development."
+        }
+      },
+      {
+        "name": "JavaScript",
+        "desc": {
+          "fr": "Interactions dynamiques côté client, manipulation du DOM et logique web moderne.",
+          "en": "Dynamic client-side interactions, DOM manipulation, and modern web logic."
+        }
+      },
+      {
+        "name": "SQL",
+        "desc": {
+          "fr": "Conception de schémas, requêtes complexes et gestion de bases de données relationnelles.",
+          "en": "Schema design, complex queries, and relational database management."
+        }
+      }
+    ]
+  },
+  {
+    "category": "frontend",
+    "title": {
+      "fr": "Web & Frontend",
+      "en": "Web & Frontend"
+    },
+    "colorClass": "skills-frontend",
+    "skills": [
+      {
+        "name": "HTML5",
+        "desc": {
+          "fr": "Structure sémantique du web, accessibilité et SEO.",
+          "en": "Semantic web structuring, accessibility, and SEO."
+        }
+      },
+      {
+        "name": "CSS3",
+        "desc": {
+          "fr": "Mises en page modernes (Flexbox, Grid), variables CSS, designs réactifs et transitions.",
+          "en": "Modern layouts (Flexbox, Grid), CSS variables, responsive design, and transitions."
+        }
+      },
+      {
+        "name": "Vue.js",
+        "desc": {
+          "fr": "Framework progressif pour la création d'interfaces utilisateur dynamiques et SPA.",
+          "en": "Progressive framework for building dynamic user interfaces and SPAs."
+        }
+      },
+      {
+        "name": "REST APIs",
+        "desc": {
+          "fr": "Intégration et communication asynchrone sécurisée avec des services backend.",
+          "en": "Integration and secure asynchronous communication with backend services."
+        }
+      },
+      {
+        "name": "Responsive Design",
+        "desc": {
+          "fr": "Création d'interfaces s'adaptant parfaitement à toutes les tailles d'écrans (Mobile-first).",
+          "en": "Creating interfaces that adapt perfectly to all screen sizes (Mobile-first)."
+        }
+      }
+    ]
+  },
+  {
+    "category": "databases",
+    "title": {
+      "fr": "Bases de données",
+      "en": "Databases"
+    },
+    "colorClass": "skills-databases",
+    "skills": [
+      {
+        "name": "Oracle 21c",
+        "desc": {
+          "fr": "Système de gestion de base de données relationnelle d'entreprise et administration.",
+          "en": "Enterprise relational database management system and administration."
+        }
+      },
+      {
+        "name": "MySQL",
+        "desc": {
+          "fr": "Gestion de base de données open-source rapide et fiable pour applications web.",
+          "en": "Fast, reliable open-source database management for web applications."
+        }
+      },
+      {
+        "name": "phpMyAdmin",
+        "desc": {
+          "fr": "Administration graphique conviviale de bases de données MySQL/MariaDB.",
+          "en": "User-friendly graphical administration of MySQL/MariaDB databases."
+        }
+      }
+    ]
+  },
+  {
+    "category": "devops",
+    "title": {
+      "fr": "Outils & DevOps",
+      "en": "Tools & DevOps"
+    },
+    "colorClass": "skills-devops",
+    "skills": [
+      {
+        "name": "Git / GitHub",
+        "desc": {
+          "fr": "Contrôle de version, collaboration en équipe, gestion de branches et workflows GitHub Actions.",
+          "en": "Version control, team collaboration, branch management, and GitHub Actions workflows."
+        }
+      },
+      {
+        "name": "Linux",
+        "desc": {
+          "fr": "Administration système, scripts Bash, gestion des permissions et environnements serveurs.",
+          "en": "System administration, Bash scripting, permission management, and server environments."
+        }
+      },
+      {
+        "name": "Figma",
+        "desc": {
+          "fr": "Prototypage rapide, conception d'interfaces UI/UX collaboratives et wireframing.",
+          "en": "Rapid prototyping, collaborative UI/UX interface design, and wireframing."
+        }
+      },
+      {
+        "name": "IntelliJ IDEA",
+        "desc": {
+          "fr": "Environnement de développement intégré de prédilection pour le développement Java.",
+          "en": "Preferred integrated development environment for Java development."
+        }
+      },
+      {
+        "name": "WebStorm",
+        "desc": {
+          "fr": "IDE puissant optimisé pour le développement écosystème JavaScript et Vue.js.",
+          "en": "Powerful IDE optimized for JavaScript ecosystem and Vue.js development."
+        }
+      },
+      {
+        "name": "VS Code",
+        "desc": {
+          "fr": "Éditeur de code léger et extensible pour le développement polyvalent.",
+          "en": "Lightweight, extensible code editor for multi-purpose development."
+        }
+      },
+      {
+        "name": "LaTeX",
+        "desc": {
+          "fr": "Composition de documents scientifiques de haute qualité et de rapports académiques.",
+          "en": "High-quality scientific document preparation and academic reporting."
+        }
+      }
+    ]
+  },
+  {
+    "category": "security",
+    "title": {
+      "fr": "Cybersécurité & Automatisation",
+      "en": "Cybersecurity & Automation"
+    },
+    "colorClass": "skills-security",
+    "skills": [
+      {
+        "name": "Cryptography",
+        "desc": {
+          "fr": "Principes de chiffrement symétrique et asymétrique, hachage, signatures numériques.",
+          "en": "Principles of symmetric and asymmetric encryption, hashing, digital signatures."
+        }
+      },
+      {
+        "name": "Steganography",
+        "desc": {
+          "fr": "Techniques de dissimulation d'informations confidentielles dans des fichiers multimédias.",
+          "en": "Techniques for hiding confidential information inside multimedia files."
+        }
+      },
+      {
+        "name": "OpenSSL",
+        "desc": {
+          "fr": "Gestion de clés cryptographiques, certificats X.509 et sécurisation des communications.",
+          "en": "Cryptographic key management, X.509 certificates, and communication security."
+        }
+      },
+      {
+        "name": "Network Analysis",
+        "desc": {
+          "fr": "Surveillance de trafic, détection d'intrusions, inspection de paquets et routage.",
+          "en": "Traffic monitoring, intrusion detection, packet inspection, and routing."
+        }
+      },
+      {
+        "name": "Wireshark",
+        "desc": {
+          "fr": "Analyseur de paquets réseau pour le dépannage et l'analyse de protocoles de sécurité.",
+          "en": "Network packet analyzer for troubleshooting and security protocol analysis."
+        }
+      },
+      {
+        "name": "Process Automation",
+        "desc": {
+          "fr": "Écriture de scripts et d'outils pour automatiser des tâches répétitives et des déploiements.",
+          "en": "Writing scripts and tools to automate repetitive tasks and deployments."
+        }
+      }
+    ]
+  }
+]

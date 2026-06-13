@@ -1,0 +1,119 @@
+[
+  {
+    "id": "project-compiler",
+    "title": "Compilateur C → Java",
+    "subtitle": {
+      "fr": "Analyseur syntaxique & sémantique",
+      "en": "Syntactic & semantic analyzer"
+    },
+    "date": {
+      "fr": "Mars 2026",
+      "en": "March 2026"
+    },
+    "desc": {
+      "fr": "Développement complet d'un compilateur fonctionnel incluant génération d'AST et analyse syntaxique/sémantique.",
+      "en": "Full compiler implementation with AST generation and syntactic/semantic analysis."
+    },
+    "tags": [
+      "Java",
+      "Compiler Design",
+      "AST",
+      "Automata"
+    ],
+    "category": "Automation",
+    "github": "https://github.com/linaMCH/Compilateur-C",
+    "image": "assets/img/projects/project-compiler.jpg",
+    "collaboration": true,
+    "collaborators": "Imene Sh ",
+    "myRole": {
+      "fr": "Implémentation du parseur",
+      "en": "Parser implementation"
+    }
+  },
+  {
+    "id": "project-stegacrypt",
+    "title": "StegaCrypt",
+    "subtitle": {
+      "fr": "Chiffrement & Stéganographie",
+      "en": "Encryption & Steganography"
+    },
+    "date": "2025–2026",
+    "desc": {
+      "fr": "Application desktop combinant algorithmes de chiffrement/déchiffrement et stéganographie pour dissimuler des données dans des fichiers image.",
+      "en": "Desktop app combining encryption/decryption algorithms and steganography to hide data inside image files."
+    },
+    "tags": [
+      "Python",
+      "JavaFX",
+      "Cryptography",
+      "Steganography",
+      "Security"
+    ],
+    "category": "Security",
+    "github": "https://github.com/ImeneeSh/StegaCrypt",
+    "image": "assets/img/projects/project-stegacrypt.jpg",
+    "collaboration": true,
+    "collaborator": "Imene Sh",
+    "myRole": {
+      "fr": "Implémentation des algorithmes de chiffrement et de stéganographie",
+      "en": "Implementation of encryption and steganography algorithms"
+    }
+  },
+  {
+    "id": "project-pharmago",
+    "title": "PharmaGO",
+    "subtitle": {
+      "fr": "Gestion de Livraisons",
+      "en": "Delivery Management System"
+    },
+    "date": "2025–2026",
+    "desc": {
+      "fr": "Application desktop pour l'optimisation des flux pharmaceutiques avec interface ergonomique.",
+      "en": "Desktop application for optimizing pharmaceutical delivery workflows with ergonomic UI."
+    },
+    "tags": [
+      "JavaFX",
+      "UX Design",
+      "Optimization",
+      "Desktop App"
+    ],
+    "category": "Full-Stack",
+    "github": "https://github.com/ImeneeSh/PharmaGo",
+    "image": "assets/img/projects/project-pharmago.jpg",
+    "collaboration": true,
+    "collaborator": "Imene Sh.",
+    "myRole": {
+      "fr": "Co-développement full-stack en binôme : conception de l'interface utilisateur et optimisation des flux applicatifs",
+      "en": "Full-stack co-development as a pair: UI design and application workflow optimization"
+    }
+  },
+  {
+    "id": "project-assirem",
+    "title": "Assirem Natation",
+    "subtitle": {
+      "fr": "Plateforme Web Club",
+      "en": "Swimming Club Web Platform"
+    },
+    "date": "2025–2026",
+    "desc": {
+      "fr": "Site web club avec architecture dynamique, composants réutilisables et interface utilisateur moderne.",
+      "en": "Club website with dynamic architecture, reusable components and modern UI."
+    },
+    "tags": [
+      "Vue.js",
+      "Spring Boot",
+      "REST API",
+      "Full-Stack"
+    ],
+    "category": "Full-Stack",
+    "github": null,
+    "privateRepo": true,
+    "image": "assets/img/projects/project-assirem.jpg",
+    "collaboration": true,
+    "collaborator": "Nour El Imene Sahi",
+    "myRole": {
+      "fr": "Co-développement full-stack : conception et implémentation de modules front-end et back-end en binôme",
+      "en": "Full-stack co-development: design and implementation of front-end and back-end modules as a pair"
+    }
+  }
+]

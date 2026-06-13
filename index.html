@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lina Maouche — Full-Stack Developer & Cybersecurity</title>
+
+  <!-- SEO & Meta Metadata -->
+  <meta name="description"
+    content="Portfolio de Lina Maouche, ingénieure logiciel full-stack spécialisée en cybersécurité et automatisation. Java, Python, Vue.js, DevOps.">
+  <meta name="keywords"
+    content="Full-Stack Developer, Cybersecurity, Automation, Java, Python, JavaScript, Vue.js, Spring Boot, DevOps, REST API, Steganography, Cryptography, Software Engineer Algeria">
+  <meta name="author" content="Lina Maouche">
+  <meta property="og:title" content="Lina Maouche — Portfolio">
+  <meta property="og:description" content="Full-Stack Developer, Cybersecurity Enthusiast, Automation Engineer.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://github.com/linaMCH">
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="css/themes.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- Sticky Navbar Header -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar-container">
+      <a href="#hero" class="logo" id="nav-logo" aria-label="Lina Maouche Portfolio Home">
+        <span class="logo-icon">LM</span>
+        <span class="code-label">&lt;LinaMCH /&gt;</span>
+      </a>
+
+      <!-- Hamburger toggle on Mobile -->
+      <button class="hamburger" id="hamburger" aria-label="Toggle Navigation Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Nav Links -->
+      <nav class="nav-menu-wrapper">
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#about" class="nav-link" data-i18n="nav.about">À propos</a></li>
+          <li><a href="#skills" class="nav-link" data-i18n="nav.skills">Compétences</a></li>
+          <li><a href="#projects" class="nav-link" data-i18n="nav.projects">Projets</a></li>
+          <li><a href="#certifications" class="nav-link" data-i18n="nav.certs">Certifications</a></li>
+          <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav Action Controls -->
+      <div class="nav-actions">
+        <!-- Language Switcher Button -->
+        <button class="btn-icon lang-toggle" id="lang-toggle" aria-label="Toggle Language" title="Passer en anglais">
+          <i class="fa-solid fa-globe"></i>
+          <span id="lang-text">EN 🇬🇧</span>
+        </button>
+
+        <!-- Dark/Light Theme Switcher Button -->
+        <button class="btn-icon" id="theme-toggle" aria-label="Toggle Dark / Light Theme" title="Switch Theme">
+          <i class="fa-solid fa-sun"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="hero">
+    <!-- CSS-only Grid & Floating glow orbs -->
+    <div class="bg-grid"></div>
+    <div class="orb orb-blue"></div>
+    <div class="orb orb-purple"></div>
+
+    <div class="container">
+      <div class="hero-content">
+        <span class="hero-subtitle-intro" data-i18n="hero.intro">Bonjour, je suis</span>
+        <h1 class="hero-title">Lina Maouche</h1>
+
+        <!-- Cycling Typewriter roles -->
+        <div class="hero-subtitle-cycling">
+          <span class="hero-subtitle-text" id="typewriter-text"></span>
+          <span class="typewriter-cursor"></span>
+        </div>
+
+        <p class="hero-desc" data-i18n="hero.pitch">
+          Étudiante en 3ème année cycle ingénieur en Génie Logiciel, spécialisée en développement full-stack,
+          cybersécurité et automatisation. Expertise solide en Java et C++, attachée à la qualité du code, aux pratiques
+          DevOps et aux architectures modernes.
+        </p>
+
+        <div class="hero-ctas">
+          <a href="#projects" class="btn btn-primary" data-i18n="hero.cta.projects">Voir mes projets</a>
+          <a href="assets/cv/Lina_Maouche_CV.pdf" class="btn btn-secondary" download="Lina_Maouche_CV.pdf"
+            data-i18n="hero.cta.cv" data-i18n-attr="title:hero.cta.cv">Télécharger le CV</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title" data-i18n="about.title">À propos de moi</h2>
+        <p class="section-subtitle" data-i18n="about.subtitle">Découvrez mon parcours et mes compétences clés</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-img-container reveal delay-100">
+          <div class="about-img-wrapper">
+            <img src="assets/img/profile.svg" alt="Lina Maouche" class="about-img" id="profile-image">
+          </div>
+        </div>
+
+        <div class="about-info reveal delay-200">
+          <h3 data-i18n="about.whoami">Qui suis-je ?</h3>
+          <p class="about-bio" data-i18n="about.bio">
+            Étudiante en 3ème année cycle ingénieur en Génie Logiciel à l'Université de Béjaïa, je me passionne pour le
+            développement full-stack, la cybersécurité et l'automatisation. Mon parcours académique m'a permis
+            d'acquérir une expertise solide en programmation structurée et orientée objet avec Java et C++, tout en
+            renforçant mes compétences en cryptographie, administration système et intégration de services modernes. Mon
+            engagement : produire un code propre, performant et hautement sécurisé en respectant les meilleures
+            pratiques de l'architecture logicielle.
+          </p>
+
+          <!-- Quick stats cards -->
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+              <div>
+                <div class="stat-title" data-i18n="about.stat.edu.title">Formation</div>
+                <div class="stat-value" data-i18n="about.stat.edu.val">ING3 — Université de Béjaïa</div>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div>
+                <div class="stat-title" data-i18n="about.stat.loc.title">Localisation</div>
+                <div class="stat-value" data-i18n="about.stat.loc.val">Béjaïa, Algérie</div>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon"><i class="fa-solid fa-language"></i></div>
+              <div>
+                <div class="stat-title" data-i18n="about.stat.lang.title">Langues</div>
+                <div class="stat-value" data-i18n="about.stat.lang.val">FR / EN / Kabyle / AR</div>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon"><i class="fa-solid fa-calendar-check"></i></div>
+              <div>
+                <div class="stat-title" data-i18n="about.stat.status.title">Disponibilité</div>
+                <div class="stat-value" data-i18n="about.stat.status.val">Disponible pour stages & opportunités</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Highlight Keywords (Visible + Semantic SEO) -->
+          <div class="keywords-container">
+            <span class="keyword-tag">Full-Stack Development</span>
+            <span class="keyword-tag">Cybersecurity</span>
+            <span class="keyword-tag">Automation</span>
+            <span class="keyword-tag">DevOps</span>
+            <span class="keyword-tag">REST APIs</span>
+            <span class="keyword-tag">Secure Coding</span>
+            <span class="keyword-tag">Software Architecture</span>
+            <span class="keyword-tag">Python</span>
+            <span class="keyword-tag">Java</span>
+            <span class="keyword-tag">JavaScript</span>
+            <span class="keyword-tag">Vue.js</span>
+            <span class="keyword-tag">Spring Boot</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS SECTION -->
+  <section class="skills" id="skills">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title" data-i18n="skills.title">Compétences</h2>
+        <p class="section-subtitle" data-i18n="skills.subtitle">Mes outils, langages et expertises techniques</p>
+      </div>
+
+      <!-- Rendered dynamically from skills.json -->
+      <div class="skills-container" id="skills-render-container">
+        <!-- Javascript loads components here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section class="projects" id="projects">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title" data-i18n="projects.title">Projets récents</h2>
+        <p class="section-subtitle" data-i18n="projects.subtitle">Découvrez une sélection de mes réalisations
+          académiques et personnelles</p>
+      </div>
+
+      <!-- Filter bar tabs -->
+      <div class="filter-bar reveal">
+        <button class="filter-btn active" data-filter="All" data-i18n="projects.filter.all">Tous</button>
+        <button class="filter-btn" data-filter="Full-Stack" data-i18n="projects.filter.fullstack">Full-Stack</button>
+        <button class="filter-btn" data-filter="Security" data-i18n="projects.filter.security">Cybersécurité</button>
+        <button class="filter-btn" data-filter="Automation"
+          data-i18n="projects.filter.automation">Automatisation</button>
+      </div>
+
+      <!-- Projects Grid render dynamically -->
+      <div class="projects-grid" id="projects-render-container">
+        <!-- Javascript loads project cards here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS SECTION -->
+  <section class="certifications" id="certifications">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title" data-i18n="certs.title">Certifications</h2>
+        <p class="section-subtitle" data-i18n="certs.subtitle">Mes accréditations et formations complémentaires</p>
+      </div>
+
+      <!-- Certs Grid render dynamically -->
+      <div class="certs-grid" id="certs-render-container">
+        <!-- Javascript loads cert cards here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- FULLSCREEN LIGHTBOX MODAL FOR CERT PHOTOS -->
+  <div class="lightbox" id="lightbox" aria-modal="true" role="dialog">
+    <div class="lightbox-content zoom-in">
+      <span class="lightbox-close" id="lightbox-close" title="Fermer"><i class="fa-solid fa-xmark"></i></span>
+      <img src="" alt="Certificat grand format" class="lightbox-img" id="lightbox-img">
+      <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
+  </div>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title" data-i18n="contact.title">Entrons en contact</h2>
+        <p class="section-subtitle" data-i18n="contact.subtitle">Une opportunité, un projet ou une question ? N'hésitez
+          pas !</p>
+      </div>
+
+      <div class="contact-container reveal">
+        <p class="contact-text" data-i18n="contact.invite">
+          Je suis actuellement ouverte aux opportunités de stage de fin d'études et aux projets de collaboration dans le
+          domaine du génie logiciel, du web et de la cybersécurité.
+        </p>
+
+        <!-- 4 Grid Contact Cards -->
+        <div class="contact-grid">
+          <a href="https://www.linkedin.com/in/lina-maouche-774510334/" target="_blank" rel="noopener noreferrer"
+            class="contact-card linkedin reveal delay-100">
+            <div class="contact-card-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+            <div class="contact-card-title" data-i18n="contact.card.linkedin">LinkedIn</div>
+            <div class="contact-card-value">Lina Maouche</div>
+          </a>
+
+          <a href="https://github.com/linaMCH" target="_blank" rel="noopener noreferrer"
+            class="contact-card github reveal delay-200">
+            <div class="contact-card-icon"><i class="fa-brands fa-github"></i></div>
+            <div class="contact-card-title" data-i18n="contact.card.github">GitHub</div>
+            <div class="contact-card-value">linaMCH</div>
+          </a>
+
+          <a href="mailto:maouchelina458@gmail.com" class="contact-card email reveal delay-300">
+            <div class="contact-card-icon"><i class="fa-regular fa-envelope"></i></div>
+            <div class="contact-card-title" data-i18n="contact.card.email">Email</div>
+            <div class="contact-card-value">maouchelina458@gmail.com</div>
+          </a>
+
+          <a href="tel:+213778268794" class="contact-card phone reveal delay-400">
+            <div class="contact-card-icon"><i class="fa-solid fa-phone"></i></div>
+            <div class="contact-card-title" data-i18n="contact.card.phone">Téléphone</div>
+            <div class="contact-card-value">+213 778 268 794</div>
+          </a>
+        </div>
+
+        <div class="contact-cta-wrapper reveal delay-500">
+          <a href="assets/cv/Lina_Maouche_CV.pdf" class="btn btn-primary contact-cta" download="Lina_Maouche_CV.pdf"
+            data-i18n="contact.cta.cv" data-i18n-attr="title:contact.cta.cv">
+            <i class="fa-regular fa-file-pdf"></i>
+            <span>Télécharger mon CV (PDF)</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-text">
+        &copy; 2026 — <span data-i18n="footer.builtby">Conçu & réalisé par Lina Maouche</span>. <span
+          data-i18n="footer.rights">Tous droits réservés</span>.
+      </div>
+
+      <div class="footer-tech">
+        <i class="fa-brands fa-html5" title="HTML5"></i>
+        <i class="fa-brands fa-css3-alt" title="CSS3"></i>
+        <i class="fa-brands fa-js" title="JavaScript (ES6)"></i>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <a href="#hero" class="back-to-top" id="back-to-top" aria-label="Back to Top" title="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </a>
+
+  <!-- Script Declarations -->
+  <script src="js/i18n.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

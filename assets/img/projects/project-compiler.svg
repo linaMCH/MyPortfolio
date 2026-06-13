@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 180" width="100%" height="100%">
+  <defs>
+    <linearGradient id="gradCompiler" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0969da" />
+      <stop offset="100%" stop-color="#8250df" />
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="#161b22"/>
+  <rect width="100%" height="100%" fill="url(#gradCompiler)" opacity="0.25"/>
+  <g stroke="#30363d" stroke-width="1" fill="none">
+    <circle cx="200" cy="90" r="60" stroke-dasharray="4"/>
+    <circle cx="200" cy="90" r="40"/>
+  </g>
+  <text x="50%" y="85%" font-family="'Inter', sans-serif" font-weight="800" font-size="20" fill="#e6edf3" text-anchor="middle">Compilateur C → Java</text>
+  <text x="50%" y="110%" font-family="'JetBrains Mono', monospace" font-size="11" fill="#58a6ff" text-anchor="middle">&lt;Automation /&gt;</text>
+</svg>

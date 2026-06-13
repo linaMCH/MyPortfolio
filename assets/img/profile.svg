@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <!-- Definitions for Gradients -->
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#58a6ff" />
+      <stop offset="100%" stop-color="#bc8cff" />
+    </linearGradient>
+    <linearGradient id="avatarGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1c2128" />
+      <stop offset="100%" stop-color="#0d1117" />
+    </linearGradient>
+    <clipPath id="circleClip">
+      <circle cx="100" cy="100" r="95" />
+    </clipPath>
+  </defs>
+
+  <!-- Background Circle with Gradient border -->
+  <circle cx="100" cy="100" r="98" fill="none" stroke="url(#bgGrad)" stroke-width="4"/>
+  
+  <!-- Main Clip Group -->
+  <g clip-path="url(#circleClip)">
+    <!-- Inner Background -->
+    <rect width="200" height="200" fill="#161b22"/>
+    
+    <!-- Abstract Tech Lines / Grid in background -->
+    <line x1="20" y1="20" x2="180" y2="180" stroke="#30363d" stroke-width="1" stroke-dasharray="4"/>
+    <line x1="180" y1="20" x2="20" y2="180" stroke="#30363d" stroke-width="1" stroke-dasharray="4"/>
+    <circle cx="100" cy="100" r="60" fill="none" stroke="#30363d" stroke-width="1"/>
+    
+    <!-- Code Monogram Overlay -->
+    <text x="100" y="65" font-family="'JetBrains Mono', monospace" font-weight="bold" font-size="16" fill="#e6edf3" opacity="0.3" text-anchor="middle">&lt;DEV&gt;</text>
+    <text x="100" y="155" font-family="'JetBrains Mono', monospace" font-weight="bold" font-size="16" fill="#e6edf3" opacity="0.3" text-anchor="middle">&lt;/SEC&gt;</text>
+
+    <!-- Stylized Avatar Silhouette -->
+    <!-- Head -->
+    <circle cx="100" cy="95" r="32" fill="url(#bgGrad)"/>
+    <!-- Head shadow/detail -->
+    <circle cx="100" cy="95" r="28" fill="url(#avatarGrad)"/>
+    
+    <!-- Shoulders / Torso -->
+    <path d="M40 175 C 40 140, 70 135, 100 135 C 130 135, 160 140, 160 175 Z" fill="url(#bgGrad)"/>
+    <path d="M44 175 C 44 144, 72 139, 100 139 C 128 139, 156 144, 156 175 Z" fill="url(#avatarGrad)"/>
+    
+    <!-- Laptop screen representation -->
+    <path d="M70 170 L130 170 L125 195 L75 195 Z" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+    <line x1="75" y1="195" x2="125" y2="195" stroke="#58a6ff" stroke-width="3"/>
+  </g>
+</svg>

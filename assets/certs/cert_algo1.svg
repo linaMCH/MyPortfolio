@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#bf953f" />
+      <stop offset="25%" stop-color="#fcf6ba" />
+      <stop offset="50%" stop-color="#b38728" />
+      <stop offset="75%" stop-color="#fbf5b7" />
+      <stop offset="100%" stop-color="#aa771c" />
+    </linearGradient>
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#30363d" />
+      <stop offset="50%" stop-color="#58a6ff" />
+      <stop offset="100%" stop-color="#bc8cff" />
+    </linearGradient>
+  </defs>
+
+  <!-- Border & Frame -->
+  <rect x="15" y="15" width="770" height="570" fill="#161b22" stroke="url(#borderGrad)" stroke-width="10" rx="10"/>
+  <rect x="35" y="35" width="730" height="530" fill="none" stroke="#30363d" stroke-width="2"/>
+
+  <!-- Background security watermark grid -->
+  <g opacity="0.05" stroke="#e6edf3" stroke-width="1">
+    <pattern id="gridPattern" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none"/>
+    </pattern>
+    <rect x="37" y="37" width="726" height="526" fill="url(#gridPattern)" />
+  </g>
+
+  <!-- Top Ribbon Monogram -->
+  <g transform="translate(400, 90)" text-anchor="middle">
+    <circle cx="0" cy="0" r="30" fill="#1c2128" stroke="url(#goldGrad)" stroke-width="3"/>
+    <text x="0" y="8" font-family="'JetBrains Mono', monospace" font-weight="bold" font-size="24" fill="url(#goldGrad)">ATS</text>
+  </g>
+
+  <!-- Certificate Content -->
+  <text x="400" y="180" font-family="'Inter', sans-serif" font-weight="700" font-size="36" fill="#e6edf3" text-anchor="middle">CERTIFICATE OF ACHIEVEMENT</text>
+  <text x="400" y="220" font-family="'Inter', sans-serif" font-weight="400" font-size="16" fill="#8b949e" text-anchor="middle">THIS IS PROUDLY PRESENTED TO</text>
+  
+  <!-- Recipient Name -->
+  <text x="400" y="290" font-family="'Inter', sans-serif" font-weight="800" font-size="44" fill="#58a6ff" text-anchor="middle">Lina Maouche</text>
+  <line x1="200" y1="315" x2="600" y2="315" stroke="url(#goldGrad)" stroke-width="3"/>
+
+  <!-- Course Name -->
+  <text x="400" y="360" font-family="'Inter', sans-serif" font-weight="400" font-size="16" fill="#8b949e" text-anchor="middle">for successfully completing the course</text>
+  <text x="400" y="410" font-family="'Inter', sans-serif" font-weight="700" font-size="28" fill="#bc8cff" text-anchor="middle">Algorithmique 1</text>
+
+  <!-- Footer Info -->
+  <!-- Left: Issuer Signature -->
+  <g transform="translate(180, 500)">
+    <line x1="0" y1="0" x2="160" y2="0" stroke="#30363d" stroke-width="1"/>
+    <text x="80" y="20" font-family="'Inter', sans-serif" font-size="14" fill="#8b949e" text-anchor="middle">Authorized Signature</text>
+    <text x="80" y="-10" font-family="cursive" font-size="22" fill="#e6edf3" text-anchor="middle" opacity="0.7">ATS Team</text>
+  </g>
+
+  <!-- Right: Verification Seal -->
+  <g transform="translate(620, 480)" text-anchor="middle">
+    <path d="M-30,-10 L-10,-40 L20,-40 L30,-10 L15,20 L-15,20 Z" fill="url(#goldGrad)" opacity="0.85"/>
+    <circle cx="0" cy="-10" r="25" fill="#1c2128" stroke="url(#goldGrad)" stroke-width="2"/>
+    <text x="0" y="-5" font-family="'Inter', sans-serif" font-weight="bold" font-size="11" fill="url(#goldGrad)">VERIFIED</text>
+    <text x="0" y="45" font-family="'JetBrains Mono', monospace" font-size="10" fill="#8b949e">ID: ATS-ALG1-2026</text>
+  </g>
+</svg>
