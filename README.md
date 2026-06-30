@@ -49,4 +49,4 @@ Ouvrez `index.html` dans votre navigateur pour voir le site.
 
 ## Licence
 
-Aucun fichier `LICENSE` inclus dans ce dépôt. Ajouter un fichier `LICENSE` pour définir les droits d'utilisation.
+Ce projet est sous licence MIT — voir le fichier [LICENSE](./LICENSE) pour plus de détails.
