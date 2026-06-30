@@ -1,6 +1,6 @@
 # MyPortfolio
 
-![HTML5](https://img.shields.io/badge/HTML5-%23E34F26.svg?style=flat&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/CSS3-%231572B6.svg?style=flat&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-%23F7DF1E.svg?style=flat&logo=javascript&logoColor=black) ![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-%23121011.svg?style=flat&logo=github) ![License](https://img.shields.io/badge/license-none-lightgrey?style=flat) ![Status](https://img.shields.io/badge/status-active-brightgreen?style=flat)
+![HTML5](https://img.shields.io/badge/HTML5-%23E34F26.svg?style=flat&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/CSS3-%231572B6.svg?style=flat&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-%23F7DF1E.svg?style=flat&logo=javascript&logoColor=black) ![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-%23121011.svg?style=flat&logo=github) ![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat) ![Status](https://img.shields.io/badge/status-active-brightgreen?style=flat)
 
 [Voir la démo en ligne](https://linamch.github.io/MyPortfolio/)
 
