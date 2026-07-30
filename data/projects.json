@@ -145,7 +145,7 @@
       "fr": "Débutant",
       "en": "Beginner"
     },
-    "image": "assets/img/projects/n8n-form-notion.jpg"
+    "image": "assets/img/projects/formulaire_notion.png"
   },
   {
     "id": "n8n-gemini-json",
@@ -177,7 +177,7 @@
       "fr": "Intermédiaire",
       "en": "Intermediate"
     },
-    "image": "assets/img/projects/n8n-gemini-json.jpg"
+    "image": "assets/img/projects/ia_sortie_structurée.png"
   },
   {
     "id": "n8n-email-triage",
@@ -210,7 +210,7 @@
       "fr": "Avancé",
       "en": "Advanced"
     },
-    "image": "assets/img/projects/n8n-email-triage.jpg"
+    "image": "assets/img/projects/trieur_mail_urgent.png"
   },
   {
     "id": "n8n-agent-memory",
@@ -242,7 +242,7 @@
       "fr": "Avancé",
       "en": "Advanced"
     },
-    "image": "assets/img/projects/n8n-agent-memory.jpg"
+    "image": "assets/img/projects/RAG_dataloead.png"
   },
   {
     "id": "n8n-rag-assistant",
@@ -274,6 +274,6 @@
       "fr": "Avancé",
       "en": "Advanced"
     },
-    "image": "assets/img/projects/n8n-rag-assistant.jpg"
+    "image": "assets/img/projects/RAG_retrieverFlow.png"
   }
 ]
