@@ -458,6 +458,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const pipCount = complexityMap[complexityText] || 1;
       const dayLabel = dayLabels[project.id] ? dayLabels[project.id][currentLang] : '';
 
+      const imgSrc = project.image || 'assets/img/projects/placeholder.jpg';
+      const imgAlt = project.title || '';
+
       // Build complexity pips (3 total)
       let pipsHtml = '';
       for (let i = 1; i <= 3; i++) {
@@ -470,6 +473,9 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       card.innerHTML = `
+        <div class="automation-card-media">
+          <img src="${imgSrc}" alt="${imgAlt}" class="automation-card-img" loading="lazy">
+        </div>
         <div class="automation-card-header">
           <span class="automation-card-day">${dayLabel}</span>
           <div class="automation-complexity">

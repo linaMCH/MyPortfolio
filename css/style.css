@@ -1187,6 +1187,26 @@ section {
   line-height: 1.2;
 }
 
+/* Automation card media (thumbnails) */
+.automation-card-media {
+  width: 100%;
+  height: 140px;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.automation-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.automation-card:hover .automation-card-img {
+  transform: scale(1.03);
+}
+
 .automation-card-objective {
   color: var(--text-muted);
   font-size: 0.88rem;
