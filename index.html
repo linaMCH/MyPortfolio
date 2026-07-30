@@ -4,17 +4,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lina Maouche — Full-Stack Developer & Cybersecurity</title>
+  <title>Lina Maouche — Développeuse Full-Stack & Automatisation IA</title>
   <link rel="icon" type="image/png" href="logoLM.png">
 
   <!-- SEO & Meta Metadata -->
   <meta name="description"
-    content="Portfolio de Lina Maouche, ingénieure logiciel full-stack spécialisée en cybersécurité et automatisation. Java, Python, Vue.js, DevOps.">
+    content="Portfolio de Lina Maouche, ingénieure logiciel full-stack spécialisée en automatisation IA. Java, Python, Vue.js, n8n, Gemini API.">
   <meta name="keywords"
-    content="Full-Stack Developer, Cybersecurity, Automation, Java, Python, JavaScript, Vue.js, Spring Boot, DevOps, REST API, Steganography, Cryptography, Software Engineer Algeria">
+    content="Full-Stack Developer, Automation, n8n, AI Agent, RAG, Java, Python, JavaScript, Vue.js, Spring Boot, DevOps, REST API, Software Engineer Algeria">
   <meta name="author" content="Lina Maouche">
   <meta property="og:title" content="Lina Maouche — Portfolio">
-  <meta property="og:description" content="Full-Stack Developer, Cybersecurity Enthusiast, Automation Engineer.">
+  <meta property="og:description" content="Full-Stack Developer, AI Automation Engineer.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://github.com/linaMCH">
 
@@ -35,8 +35,7 @@
   <header class="navbar" id="navbar">
     <div class="container navbar-container">
       <a href="#hero" class="logo" id="nav-logo" aria-label="Lina Maouche Portfolio Home">
-        <span class="logo-icon">LM</span>
-
+        <img src="logoLM.png" alt="Lina Maouche Logo" class="logo-img">
       </a>
 
       <!-- Hamburger toggle on Mobile -->
@@ -52,6 +51,7 @@
           <li><a href="#about" class="nav-link" data-i18n="nav.about">À propos</a></li>
           <li><a href="#skills" class="nav-link" data-i18n="nav.skills">Compétences</a></li>
           <li><a href="#projects" class="nav-link" data-i18n="nav.projects">Projets</a></li>
+          <li><a href="#automation" class="nav-link" data-i18n="nav.automation">Automatisation</a></li>
           <li><a href="#certifications" class="nav-link" data-i18n="nav.certs">Certifications</a></li>
           <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
         </ul>
@@ -93,7 +93,7 @@
 
         <p class="hero-desc" data-i18n="hero.pitch">
           Étudiante en 3ème année cycle ingénieur en Génie Logiciel, spécialisée en développement full-stack,
-          cybersécurité et automatisation. Expertise solide en Java et C++, attachée à la qualité du code, aux pratiques
+          et automatisation. Expertise solide en Java et C++, attachée à la qualité du code, aux pratiques
           DevOps et aux architectures modernes.
         </p>
 
@@ -110,7 +110,10 @@
   <section class="about" id="about">
     <div class="container">
       <div class="section-header reveal">
-        <h2 class="section-title" data-i18n="about.title">À propos de moi</h2>
+        <div>
+          <span class="section-eyebrow">À propos</span>
+          <h2 class="section-title" data-i18n="about.title">À propos de moi</h2>
+        </div>
         <p class="section-subtitle" data-i18n="about.subtitle">Découvrez mon parcours et mes compétences clés</p>
       </div>
 
@@ -125,9 +128,9 @@
           <h3 data-i18n="about.whoami">Qui suis-je ?</h3>
           <p class="about-bio" data-i18n="about.bio">
             Étudiante en 3ème année cycle ingénieur en Génie Logiciel à l'Université de Béjaïa, je me passionne pour le
-            développement full-stack, la cybersécurité et l'automatisation. Mon parcours académique m'a permis
+            développement full-stack et l'automatisation. Mon parcours académique m'a permis
             d'acquérir une expertise solide en programmation structurée et orientée objet avec Java et C++, tout en
-            renforçant mes compétences en cryptographie, administration système et intégration de services modernes. Mon
+            renforçant mes compétences en administration système et intégration de services modernes. Mon
             engagement : produire un code propre, performant et hautement sécurisé en respectant les meilleures
             pratiques de l'architecture logicielle.
           </p>
@@ -170,17 +173,15 @@
           <!-- Highlight Keywords (Visible + Semantic SEO) -->
           <div class="keywords-container">
             <span class="keyword-tag">Full-Stack Development</span>
-            <span class="keyword-tag">Cybersecurity</span>
             <span class="keyword-tag">Automation</span>
             <span class="keyword-tag">DevOps</span>
             <span class="keyword-tag">REST APIs</span>
-            <span class="keyword-tag">Secure Coding</span>
             <span class="keyword-tag">Software Architecture</span>
             <span class="keyword-tag">Python</span>
             <span class="keyword-tag">Java</span>
             <span class="keyword-tag">JavaScript</span>
-            <span class="keyword-tag">Vue.js</span>
-            <span class="keyword-tag">Spring Boot</span>
+            <span class="keyword-tag">n8n</span>
+            <span class="keyword-tag">AI Agent</span>
           </div>
         </div>
       </div>
@@ -191,7 +192,10 @@
   <section class="skills" id="skills">
     <div class="container">
       <div class="section-header reveal">
-        <h2 class="section-title" data-i18n="skills.title">Compétences</h2>
+        <div>
+          <span class="section-eyebrow">Stack</span>
+          <h2 class="section-title" data-i18n="skills.title">Compétences</h2>
+        </div>
         <p class="section-subtitle" data-i18n="skills.subtitle">Mes outils, langages et expertises techniques</p>
       </div>
 
@@ -206,7 +210,10 @@
   <section class="projects" id="projects">
     <div class="container">
       <div class="section-header reveal">
-        <h2 class="section-title" data-i18n="projects.title">Projets récents</h2>
+        <div>
+          <span class="section-eyebrow">Réalisations</span>
+          <h2 class="section-title" data-i18n="projects.title">Projets récents</h2>
+        </div>
         <p class="section-subtitle" data-i18n="projects.subtitle">Découvrez une sélection de mes réalisations
           académiques et personnelles</p>
       </div>
@@ -215,9 +222,10 @@
       <div class="filter-bar reveal">
         <button class="filter-btn active" data-filter="All" data-i18n="projects.filter.all">Tous</button>
         <button class="filter-btn" data-filter="Full-Stack" data-i18n="projects.filter.fullstack">Full-Stack</button>
-        <button class="filter-btn" data-filter="Security" data-i18n="projects.filter.security">Cybersécurité</button>
+        <button class="filter-btn" data-filter="Security" data-i18n="projects.filter.security">Sécurité</button>
         <button class="filter-btn" data-filter="Automation"
           data-i18n="projects.filter.automation">Automatisation</button>
+        <button class="filter-btn" data-filter="AI-Automation" data-i18n="projects.filter.ai">IA & n8n</button>
       </div>
 
       <!-- Projects Grid render dynamically -->
@@ -227,11 +235,62 @@
     </div>
   </section>
 
+  <!-- N8N AUTOMATION SECTION -->
+  <section class="automation" id="automation">
+    <div class="container">
+      <div class="section-header reveal">
+        <div>
+          <span class="section-eyebrow">n8n</span>
+          <h2 class="section-title" data-i18n="automation.title">Formation n8n</h2>
+        </div>
+        <p class="section-subtitle" data-i18n="automation.subtitle">7 jours de pratique intensive en automatisation de
+          workflows et architecture d'agents IA</p>
+      </div>
+
+      <!-- Training context banner -->
+      <div class="automation-context reveal">
+        <div class="automation-context-icon">
+          <i class="fa-solid fa-diagram-project"></i>
+        </div>
+        <div class="automation-context-text">
+          <span class="automation-context-label" data-i18n="automation.tag">Juillet 2026 — Formation intensive 7
+            jours</span>
+          <p class="automation-context-desc" id="automation-intro-text">
+            Cinq workflows construits sur n8n couvrant l'ensemble du spectre — du traitement de formulaires à
+            l'architecture d'agents IA avec mémoire et base de connaissances.
+          </p>
+        </div>
+      </div>
+
+      <!-- Bento grid — rendered by JS -->
+      <div class="automation-grid" id="automation-render-container">
+        <!-- Javascript loads automation cards here -->
+      </div>
+
+      <!-- Cross-cutting skills -->
+      <div class="automation-skills-bar reveal">
+        <span class="automation-skills-bar-label" data-i18n="automation.skills.label">Compétences transverses</span>
+        <div class="automation-skills-list">
+          <span class="automation-skill-chip">Triggers multiples (webhook, form, Gmail, chat, cron)</span>
+          <span class="automation-skill-chip">Transformation de données</span>
+          <span class="automation-skill-chip">Logique conditionnelle</span>
+          <span class="automation-skill-chip">OAuth (Gmail, Slack, Notion)</span>
+          <span class="automation-skill-chip">Architecture agent IA (Model / Memory / Tool)</span>
+          <span class="automation-skill-chip">RAG & Vector Store</span>
+          <span class="automation-skill-chip">Prompt engineering</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CERTIFICATIONS SECTION -->
   <section class="certifications" id="certifications">
     <div class="container">
       <div class="section-header reveal">
-        <h2 class="section-title" data-i18n="certs.title">Certifications</h2>
+        <div>
+          <span class="section-eyebrow">Accréditations</span>
+          <h2 class="section-title" data-i18n="certs.title">Certifications</h2>
+        </div>
         <p class="section-subtitle" data-i18n="certs.subtitle">Mes accréditations et formations complémentaires</p>
       </div>
 
@@ -255,7 +314,10 @@
   <section class="contact" id="contact">
     <div class="container">
       <div class="section-header reveal">
-        <h2 class="section-title" data-i18n="contact.title">Entrons en contact</h2>
+        <div>
+          <span class="section-eyebrow">Contact</span>
+          <h2 class="section-title" data-i18n="contact.title">Entrons en contact</h2>
+        </div>
         <p class="section-subtitle" data-i18n="contact.subtitle">Une opportunité, un projet ou une question ? N'hésitez
           pas !</p>
       </div>
@@ -263,7 +325,7 @@
       <div class="contact-container reveal">
         <p class="contact-text" data-i18n="contact.invite">
           Je suis actuellement ouverte aux opportunités de stage de fin d'études et aux projets de collaboration dans le
-          domaine du génie logiciel, du web et de la cybersécurité.
+          domaine du génie logiciel, du web et de l'automatisation.
         </p>
 
         <!-- 4 Grid Contact Cards -->

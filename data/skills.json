@@ -31,8 +31,8 @@
       {
         "name": "Python",
         "desc": {
-          "fr": "Scripts d'automatisation, cybersécurité, scripting réseau et développement rapide.",
-          "en": "Automation scripts, cybersecurity, network scripting, and rapid development."
+          "fr": "Scripts d'automatisation, scripting réseau et développement rapide.",
+          "en": "Automation scripts, network scripting, and rapid development."
         }
       },
       {
@@ -189,8 +189,8 @@
   {
     "category": "security",
     "title": {
-      "fr": "Cybersécurité & Automatisation",
-      "en": "Cybersecurity & Automation"
+      "fr": "Sécurité & Automatisation",
+      "en": "Security & Automation"
     },
     "colorClass": "skills-security",
     "skills": [
@@ -234,6 +234,58 @@
         "desc": {
           "fr": "Écriture de scripts et d'outils pour automatiser des tâches répétitives et des déploiements.",
           "en": "Writing scripts and tools to automate repetitive tasks and deployments."
+        }
+      }
+    ]
+  },
+  {
+    "category": "ai-automation",
+    "title": {
+      "fr": "Automatisation & IA",
+      "en": "Automation & AI"
+    },
+    "colorClass": "skills-ai-automation",
+    "skills": [
+      {
+        "name": "n8n",
+        "desc": {
+          "fr": "Orchestration de workflows no-code/low-code : triggers, transformations de données, branchements conditionnels et intégration de services tiers.",
+          "en": "No-code/low-code workflow orchestration: triggers, data transformations, conditional branching, and third-party service integration."
+        }
+      },
+      {
+        "name": "Gemini API",
+        "desc": {
+          "fr": "Appels à l'API Google Gemini avec prompt engineering pour obtenir des sorties JSON structurées et réaliser des analyses de texte (sentiment, résumé).",
+          "en": "Google Gemini API calls with prompt engineering to obtain structured JSON outputs and perform text analysis (sentiment, summarization)."
+        }
+      },
+      {
+        "name": "OAuth 2.0",
+        "desc": {
+          "fr": "Mise en place d'intégrations sécurisées via flux OAuth : Gmail et Slack dans des workflows automatisés.",
+          "en": "Setting up secure OAuth-based integrations: Gmail and Slack within automated workflows."
+        }
+      },
+      {
+        "name": "Architecture agent IA",
+        "desc": {
+          "fr": "Conception d'agents IA avec modèle de langage, mémoire de conversation (Window Buffer Memory) et outils personnalisés — l'agent décide lui-même quel outil appeler.",
+          "en": "Designing AI agents with a language model, conversation memory (Window Buffer Memory), and custom tools — the agent autonomously decides which tool to call."
+        }
+      },
+      {
+        "name": "RAG",
+        "desc": {
+          "fr": "Retrieval-Augmented Generation : indexation d'une base de connaissances par embeddings dans un Vector Store, interrogation contextuelle avec refus de répondre hors périmètre.",
+          "en": "Retrieval-Augmented Generation: embedding-based knowledge base indexing in a Vector Store, contextual querying with explicit out-of-scope refusal."
+        }
+      },
+      {
+        "name": "Webhook & Triggers",
+        "desc": {
+          "fr": "Utilisation de triggers variés : webhook, formulaire, Gmail, déclencheur de chat et cron — pour concevoir des workflows réactifs ou planifiés.",
+          "en": "Using diverse trigger types: webhook, form, Gmail, chat trigger, and cron — to design reactive or scheduled workflows."
         }
       }
     ]

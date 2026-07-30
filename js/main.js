@@ -50,7 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
     elements.forEach(el => {
       const key = el.getAttribute('data-i18n');
       if (window.portfolioTranslations[lang] && window.portfolioTranslations[lang][key]) {
-        // If it's an input or textarea, translate placeholder
         if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
           el.setAttribute('placeholder', window.portfolioTranslations[lang][key]);
         } else {
@@ -70,10 +69,20 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
+    // Update automation section intro text
+    const introEl = document.getElementById('automation-intro-text');
+    if (introEl) {
+      const key = lang === 'fr' ? 'automation.intro.fr' : 'automation.intro.en';
+      if (window.portfolioTranslations[lang] && window.portfolioTranslations[lang][key]) {
+        introEl.textContent = window.portfolioTranslations[lang][key];
+      }
+    }
+
     // Re-render components with translated dynamic data
     renderSkills();
     renderProjects();
     renderCertifications();
+    renderAutomation();
 
     // Restart typewriter for new language
     initTypewriter();
@@ -108,27 +117,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const currentString = subtitles[currentSubtitleIndex];
     
     if (isDeleting) {
-      // Deleting characters
       typewriterText.textContent = currentString.substring(0, currentCharIndex - 1);
       currentCharIndex--;
     } else {
-      // Writing characters
       typewriterText.textContent = currentString.substring(0, currentCharIndex + 1);
       currentCharIndex++;
     }
 
     let typingSpeed = isDeleting ? 40 : 100;
 
-    // Handle end of typing / deletion cycles
     if (!isDeleting && currentCharIndex === currentString.length) {
-      // Finished typing, pause before delete
       typingSpeed = 2200;
       isDeleting = true;
     } else if (isDeleting && currentCharIndex === 0) {
-      // Finished deleting, shift to next subtitle
       isDeleting = false;
       currentSubtitleIndex = (currentSubtitleIndex + 1) % subtitles.length;
-      typingSpeed = 500; // brief pause before writing next word
+      typingSpeed = 500;
     }
 
     typewriterTimeout = setTimeout(runTypewriter, typingSpeed);
@@ -141,7 +145,6 @@ document.addEventListener('DOMContentLoaded', () => {
       navMenu.classList.toggle('active');
     });
 
-    // Close menu when clicking nav link
     const navLinks = document.querySelectorAll('.nav-link');
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
@@ -157,14 +160,13 @@ document.addEventListener('DOMContentLoaded', () => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('reveal-visible');
-        // Unobserve after revealing to prevent repeated triggering
         elementObserver.unobserve(entry.target);
       }
     });
   }, {
     root: null,
-    threshold: 0.15,
-    rootMargin: "0px 0px -50px 0px"
+    threshold: 0.12,
+    rootMargin: "0px 0px -40px 0px"
   });
 
   scrollElements.forEach(el => {
@@ -175,27 +177,24 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', () => {
     const scrollPos = window.scrollY;
     
-    // Navbar visual contraction
     if (scrollPos > 50) {
       navbar.classList.add('scrolled');
     } else {
       navbar.classList.remove('scrolled');
     }
 
-    // Scroll top button activation
     if (scrollPos > 500) {
       backToTopBtn.classList.add('active');
     } else {
       backToTopBtn.classList.remove('active');
     }
 
-    // Active Section Link Highlighting
     highlightActiveNavSection();
   });
 
   function highlightActiveNavSection() {
     const sections = document.querySelectorAll('section[id]');
-    const scrollPos = window.scrollY + 120; // offset for navbar height
+    const scrollPos = window.scrollY + 120;
     
     sections.forEach(section => {
       const top = section.offsetTop;
@@ -219,15 +218,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     skillsData.forEach((categoryData, catIdx) => {
       const categoryCard = document.createElement('div');
-      categoryCard.className = 'skills-category reveal';
-      categoryCard.className += ` delay-${(catIdx + 1) * 100}`;
       
-      // Select appropriate folder icon depending on category
+      // AI-Automation category spans full width
+      const isAI = categoryData.category === 'ai-automation';
+      categoryCard.className = `skills-category reveal delay-${(catIdx + 1) * 100}${isAI ? ' skills-ai-full' : ''}`;
+      
+      // Select appropriate icon depending on category
       let iconClass = 'fa-code';
       if (categoryData.category === 'frontend') iconClass = 'fa-laptop-code';
       else if (categoryData.category === 'databases') iconClass = 'fa-database';
       else if (categoryData.category === 'devops') iconClass = 'fa-toolbox';
       else if (categoryData.category === 'security') iconClass = 'fa-shield-halved';
+      else if (categoryData.category === 'ai-automation') iconClass = 'fa-diagram-project';
 
       const titleText = categoryData.title[currentLang] || categoryData.title.fr;
 
@@ -252,7 +254,6 @@ document.addEventListener('DOMContentLoaded', () => {
       categoryCard.innerHTML = html;
       container.appendChild(categoryCard);
       
-      // Observe newly added elements for scrolling reveal
       elementObserver.observe(categoryCard);
     });
   }
@@ -266,24 +267,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     container.innerHTML = '';
 
-    // Filter projects based on active filter button
+    // Filter projects — exclude n8n workflows from general projects list
     const filtered = projectsData.filter(project => {
-      if (activeFilter === 'All') return true;
-      if (activeFilter === 'Full-Stack') return project.category === 'Full-Stack';
-      if (activeFilter === 'Security') return project.category === 'Security';
-      if (activeFilter === 'Automation') return project.category === 'Automation';
+      if (activeFilter === 'All') return !project.n8nWorkflow;
+      if (activeFilter === 'Full-Stack') return project.category === 'Full-Stack' && !project.n8nWorkflow;
+      if (activeFilter === 'Security') return project.category === 'Security' && !project.n8nWorkflow;
+      if (activeFilter === 'Automation') return project.category === 'Automation' && !project.n8nWorkflow;
+      if (activeFilter === 'AI-Automation') return project.category === 'AI-Automation';
       return true;
     });
 
     if (filtered.length === 0) {
-      container.innerHTML = `<p style="grid-column: 1/-1; text-align: center; color: var(--text-muted);">No projects found.</p>`;
+      container.innerHTML = `<p style="grid-column: 1/-1; text-align: center; color: var(--text-muted); padding: 40px 0;">Aucun projet dans cette catégorie.</p>`;
       return;
     }
 
     filtered.forEach((project, idx) => {
       const card = document.createElement('div');
-      card.className = 'project-card reveal';
-      card.className += ` delay-${(idx % 2 + 1) * 100}`;
+      card.className = `project-card reveal delay-${(idx % 2 + 1) * 100}`;
 
       const descText = project.desc[currentLang] || project.desc.fr;
       const subtitleText = project.subtitle ? (project.subtitle[currentLang] || project.subtitle.fr) : '';
@@ -297,7 +298,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
       let subtitleHtml = subtitleText ? `<div class="project-subtitle">${subtitleText}</div>` : '';
 
-      // Collaboration HTML logic
+      // n8n badge + complexity
+      let n8nBadgeHtml = '';
+      if (project.n8nWorkflow) {
+        const workflowLabel = window.portfolioTranslations[currentLang]['projects.workflow.label'];
+        const complexityLabel = window.portfolioTranslations[currentLang]['projects.complexity.label'];
+        const complexityText = project.complexity ? (project.complexity[currentLang] || project.complexity.fr) : '';
+
+        // Map complexity to pip level
+        const complexityMap = {
+          'Débutant': 1, 'Beginner': 1,
+          'Intermédiaire': 2, 'Intermediate': 2,
+          'Avancé': 3, 'Advanced': 3
+        };
+        const level = complexityMap[complexityText] || 1;
+
+        n8nBadgeHtml = `
+          <div class="project-n8n-badge">
+            <i class="fa-solid fa-diagram-project"></i>
+            <span>${workflowLabel}</span>
+          </div>
+          <div class="project-complexity">
+            <span class="project-complexity-dot level-${level}"></span>
+            <span>${complexityLabel} ${complexityText}</span>
+          </div>
+        `;
+      }
+
+      // Collaboration HTML
       let collaborationHtml = '';
       if (project.collaboration) {
         let collabText = '';
@@ -327,7 +355,7 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
       }
 
-      // GitHub vs Private Repo HTML logic
+      // GitHub vs Private vs n8n (no public repo)
       let actionHtml = '';
       if (project.github) {
         actionHtml = `
@@ -346,9 +374,12 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
       }
 
+      // Project image — fallback placeholder for n8n workflows
+      const imgSrc = project.image || 'assets/img/projects/placeholder.jpg';
+
       card.innerHTML = `
         <div class="project-img-wrapper">
-          <img src="${project.image}" alt="${project.title}" class="project-card-img" loading="lazy">
+          <img src="${imgSrc}" alt="${project.title}" class="project-card-img" loading="lazy">
           <div class="project-img-overlay"></div>
         </div>
         <div class="project-card-content">
@@ -357,6 +388,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <span class="project-category">${project.category}</span>
               <span class="project-date code-label">${dateText}</span>
             </div>
+            ${n8nBadgeHtml}
             <h3 class="project-title">${project.title}</h3>
             ${subtitleHtml}
             <p class="project-desc">${descText}</p>
@@ -372,8 +404,6 @@ document.addEventListener('DOMContentLoaded', () => {
       `;
 
       container.appendChild(card);
-      
-      // Observe new project card
       elementObserver.observe(card);
     });
   }
@@ -391,7 +421,75 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 8. Certifications Renderer
+  // 8. Automation Section Renderer (n8n bento cards)
+  function renderAutomation() {
+    const container = document.getElementById('automation-render-container');
+    if (!container || projectsData.length === 0) return;
+
+    container.innerHTML = '';
+
+    // Workflow day labels (Day 2–6)
+    const dayLabels = {
+      'n8n-form-notion':   { fr: 'Jour 2', en: 'Day 2' },
+      'n8n-gemini-json':   { fr: 'Jour 3', en: 'Day 3' },
+      'n8n-email-triage':  { fr: 'Jour 4', en: 'Day 4' },
+      'n8n-agent-memory':  { fr: 'Jour 5', en: 'Day 5' },
+      'n8n-rag-assistant': { fr: 'Jour 6', en: 'Day 6' }
+    };
+
+    const n8nProjects = projectsData.filter(p => p.n8nWorkflow);
+
+    if (n8nProjects.length === 0) return;
+
+    // Map complexity text to pip count
+    const complexityMap = {
+      'Débutant': 1, 'Beginner': 1,
+      'Intermédiaire': 2, 'Intermediate': 2,
+      'Avancé': 3, 'Advanced': 3
+    };
+
+    n8nProjects.forEach((project, idx) => {
+      const card = document.createElement('div');
+      card.className = `automation-card reveal delay-${(idx % 3 + 1) * 100}`;
+
+      const title = project.title;
+      const descText = project.desc[currentLang] || project.desc.fr;
+      const complexityText = project.complexity ? (project.complexity[currentLang] || project.complexity.fr) : '';
+      const pipCount = complexityMap[complexityText] || 1;
+      const dayLabel = dayLabels[project.id] ? dayLabels[project.id][currentLang] : '';
+
+      // Build complexity pips (3 total)
+      let pipsHtml = '';
+      for (let i = 1; i <= 3; i++) {
+        pipsHtml += `<span class="complexity-pip ${i <= pipCount ? 'active' : ''}"></span>`;
+      }
+
+      let tagsHtml = '';
+      project.tags.forEach(tag => {
+        tagsHtml += `<span class="automation-tag">${tag}</span>`;
+      });
+
+      card.innerHTML = `
+        <div class="automation-card-header">
+          <span class="automation-card-day">${dayLabel}</span>
+          <div class="automation-complexity">
+            ${pipsHtml}
+            <span>${complexityText}</span>
+          </div>
+        </div>
+        <h3 class="automation-card-title">${title}</h3>
+        <p class="automation-card-objective">${descText}</p>
+        <div class="automation-tags">
+          ${tagsHtml}
+        </div>
+      `;
+
+      container.appendChild(card);
+      elementObserver.observe(card);
+    });
+  }
+
+  // 9. Certifications Renderer
   function renderCertifications() {
     const container = document.getElementById('certs-render-container');
     if (!container || certsData.length === 0) return;
@@ -400,8 +498,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     certsData.forEach((cert, idx) => {
       const card = document.createElement('div');
-      card.className = 'cert-card reveal';
-      card.className += ` delay-${(idx % 4 + 1) * 100}`;
+      card.className = `cert-card reveal delay-${(idx % 4 + 1) * 100}`;
 
       const certName = cert.name[currentLang] || cert.name.fr;
       const btnText = window.portfolioTranslations[currentLang]['certs.btn.view'];
@@ -443,9 +540,8 @@ document.addEventListener('DOMContentLoaded', () => {
     lightboxImg.src = src;
     lightboxCaption.textContent = caption;
     lightbox.classList.add('active');
-    document.body.style.overflow = 'hidden'; // Lock body scroll
+    document.body.style.overflow = 'hidden';
 
-    // Accessiblity close button translation
     if (lightboxClose) {
       lightboxClose.setAttribute('title', window.portfolioTranslations[currentLang]['lightbox.close']);
     }
@@ -454,7 +550,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function closeLightbox() {
     if (!lightbox) return;
     lightbox.classList.remove('active');
-    document.body.style.overflow = ''; // Unlock scroll
+    document.body.style.overflow = '';
   }
 
   if (lightboxClose) {
@@ -462,7 +558,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (lightbox) {
-    // Close on click outside of the image
     lightbox.addEventListener('click', (e) => {
       if (e.target === lightbox) {
         closeLightbox();
@@ -470,14 +565,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Close on ESC keypress
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       closeLightbox();
     }
   });
 
-  // 9. Load JSON Data asynchronously
+  // 10. Load JSON Data asynchronously
   async function loadData() {
     try {
       const [projectsRes, skillsRes, certsRes] = await Promise.all([
@@ -490,7 +584,6 @@ document.addEventListener('DOMContentLoaded', () => {
       skillsData = skillsRes;
       certsData = certsRes;
 
-      // Translate page immediately (this triggers renders as well)
       translatePage(currentLang);
       setupProjectFilters();
     } catch (err) {
@@ -498,6 +591,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Load database assets on startup
   loadData();
 });

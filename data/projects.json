@@ -115,5 +115,165 @@
       "fr": "Co-développement full-stack : conception et implémentation de modules front-end et back-end en binôme",
       "en": "Full-stack co-development: design and implementation of front-end and back-end modules as a pair"
     }
+  },
+  {
+    "id": "n8n-form-notion",
+    "title": "Formulaire → Notion",
+    "subtitle": {
+      "fr": "Capture de contacts automatisée",
+      "en": "Automated contact capture"
+    },
+    "date": {
+      "fr": "Juillet 2026",
+      "en": "July 2026"
+    },
+    "desc": {
+      "fr": "Workflow de capture de contacts via formulaire n8n : filtrage des emails invalides par expression régulière, puis création automatique d'une entrée structurée dans une base Notion.",
+      "en": "Contact capture workflow via n8n form: filtering invalid emails with regex, then automatically creating structured entries in a Notion database."
+    },
+    "tags": [
+      "n8n",
+      "Notion API",
+      "Form Trigger",
+      "Data Validation"
+    ],
+    "category": "AI-Automation",
+    "github": null,
+    "privateRepo": false,
+    "n8nWorkflow": true,
+    "complexity": {
+      "fr": "Débutant",
+      "en": "Beginner"
+    },
+    "image": "assets/img/projects/n8n-form-notion.jpg"
+  },
+  {
+    "id": "n8n-gemini-json",
+    "title": "IA à sortie structurée",
+    "subtitle": {
+      "fr": "Parsing JSON via Gemini",
+      "en": "JSON parsing via Gemini"
+    },
+    "date": {
+      "fr": "Juillet 2026",
+      "en": "July 2026"
+    },
+    "desc": {
+      "fr": "Appel à l'API Google Gemini avec un prompt forçant une réponse JSON stricte, suivi du parsing et de l'extraction des données côté JavaScript.",
+      "en": "Google Gemini API call with a prompt enforcing strict JSON output, followed by JavaScript-side parsing and data extraction."
+    },
+    "tags": [
+      "n8n",
+      "Google Gemini",
+      "JSON",
+      "JavaScript",
+      "Prompt Engineering"
+    ],
+    "category": "AI-Automation",
+    "github": null,
+    "privateRepo": false,
+    "n8nWorkflow": true,
+    "complexity": {
+      "fr": "Intermédiaire",
+      "en": "Intermediate"
+    },
+    "image": "assets/img/projects/n8n-gemini-json.jpg"
+  },
+  {
+    "id": "n8n-email-triage",
+    "title": "Trieur d'e-mails intelligent",
+    "subtitle": {
+      "fr": "Gmail → Gemini → Slack + brouillon auto",
+      "en": "Gmail → Gemini → Slack + auto-draft"
+    },
+    "date": {
+      "fr": "Juillet 2026",
+      "en": "July 2026"
+    },
+    "desc": {
+      "fr": "Gmail Trigger déclenche une analyse Gemini (sentiment, catégorie, résumé, brouillon de réponse) puis un branchement conditionnel : alerte Slack et brouillon Gmail automatique pour les messages urgents. Intégrations OAuth Gmail et Slack.",
+      "en": "Gmail Trigger fires a Gemini analysis (sentiment, category, summary, reply draft) then conditional branching: Slack alert and auto Gmail draft for urgent messages. Gmail + Slack OAuth integrations."
+    },
+    "tags": [
+      "n8n",
+      "Gmail API",
+      "Slack",
+      "Google Gemini",
+      "OAuth",
+      "Conditional Logic"
+    ],
+    "category": "AI-Automation",
+    "github": null,
+    "privateRepo": false,
+    "n8nWorkflow": true,
+    "complexity": {
+      "fr": "Avancé",
+      "en": "Advanced"
+    },
+    "image": "assets/img/projects/n8n-email-triage.jpg"
+  },
+  {
+    "id": "n8n-agent-memory",
+    "title": "Agent conversationnel",
+    "subtitle": {
+      "fr": "Mémoire + outils personnalisés",
+      "en": "Memory + custom tools"
+    },
+    "date": {
+      "fr": "Juillet 2026",
+      "en": "July 2026"
+    },
+    "desc": {
+      "fr": "Agent IA avec mémoire de conversation (Window Buffer Memory) et deux outils personnalisés — recherche client et calcul de remise. L'agent choisit lui-même quel outil appeler selon le contexte de la conversation.",
+      "en": "AI agent with conversation memory (Window Buffer Memory) and two custom tools — customer lookup and discount calculation. The agent autonomously decides which tool to call based on conversation context."
+    },
+    "tags": [
+      "n8n",
+      "AI Agent",
+      "Window Buffer Memory",
+      "Tool Calling",
+      "LLM"
+    ],
+    "category": "AI-Automation",
+    "github": null,
+    "privateRepo": false,
+    "n8nWorkflow": true,
+    "complexity": {
+      "fr": "Avancé",
+      "en": "Advanced"
+    },
+    "image": "assets/img/projects/n8n-agent-memory.jpg"
+  },
+  {
+    "id": "n8n-rag-assistant",
+    "title": "Assistant RAG",
+    "subtitle": {
+      "fr": "Base de connaissances + Vector Store",
+      "en": "Knowledge base + Vector Store"
+    },
+    "date": {
+      "fr": "Juillet 2026",
+      "en": "July 2026"
+    },
+    "desc": {
+      "fr": "Agent qui répond à partir d'une base de connaissances indexée par embeddings (Vector Store). Refuse explicitement de répondre aux questions hors périmètre défini.",
+      "en": "Agent that answers from an embedding-indexed knowledge base (Vector Store). Explicitly refuses to respond to out-of-scope questions."
+    },
+    "tags": [
+      "n8n",
+      "RAG",
+      "Vector Store",
+      "Embeddings",
+      "AI Agent"
+    ],
+    "category": "AI-Automation",
+    "github": null,
+    "privateRepo": false,
+    "n8nWorkflow": true,
+    "complexity": {
+      "fr": "Avancé",
+      "en": "Advanced"
+    },
+    "image": "assets/img/projects/n8n-rag-assistant.jpg"
   }
 ]
