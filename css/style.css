@@ -14,7 +14,14 @@ body {
   color: var(--text-primary);
   line-height: 1.6;
   overflow-x: hidden;
+  min-width: 320px;
   transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -62,6 +69,17 @@ button {
 section {
   padding: 110px 0;
   position: relative;
+  overflow-x: clip;
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  section {
+    padding: 90px 0;
+  }
 }
 
 /* ── SECTION HEADERS ── Editorial asymmetric style */
@@ -286,6 +304,7 @@ section {
   position: relative;
   z-index: 2;
   max-width: 780px;
+  width: 100%;
 }
 
 .hero-subtitle-intro {
@@ -299,7 +318,7 @@ section {
 
 .hero-title {
   font-family: var(--font-display);
-  font-size: 3.2rem;
+  font-size: clamp(2.35rem, 5.8vw, 3.2rem);
   font-weight: 800;
   letter-spacing: -1px;
   margin-bottom: 20px;
@@ -310,9 +329,9 @@ section {
 }
 
 .hero-subtitle-cycling {
-  font-size: 1.6rem;
+  font-size: clamp(1.15rem, 3.3vw, 1.6rem);
   font-weight: 600;
-  height: 44px;
+  min-height: 44px;
   color: var(--text-primary);
   margin-bottom: 28px;
   display: flex;
@@ -326,7 +345,7 @@ section {
 }
 
 .hero-desc {
-  font-size: 1.15rem;
+  font-size: clamp(1rem, 2.2vw, 1.15rem);
   color: var(--text-muted);
   max-width: 580px;
   margin-bottom: 44px;
@@ -1717,7 +1736,11 @@ section {
 
   .hero-subtitle-cycling {
     font-size: 1.3rem;
-    height: 38px;
+    min-height: 38px;
+  }
+
+  .hero-content {
+    padding-right: 8px;
   }
 
   .hero-content::before {
@@ -1725,8 +1748,8 @@ section {
   }
 
   .about-img-wrapper {
-    width: 260px;
-    height: 260px;
+    width: min(82vw, 260px);
+    height: min(82vw, 260px);
   }
 
   .automation-grid {
@@ -1777,5 +1800,11 @@ section {
   .automation-context {
     flex-direction: column;
     text-align: center;
+  }
+
+  .skill-badge,
+  .project-tag,
+  .automation-tag {
+    word-break: break-word;
   }
 }

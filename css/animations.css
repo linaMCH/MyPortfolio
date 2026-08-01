@@ -66,8 +66,8 @@
 }
 
 .orb-blue {
-  width: 500px;
-  height: 500px;
+  width: min(70vw, 500px);
+  height: min(70vw, 500px);
   background: var(--accent-blue);
   top: -150px;
   left: -80px;
@@ -75,12 +75,52 @@
 }
 
 .orb-purple {
-  width: 600px;
-  height: 600px;
+  width: min(72vw, 600px);
+  height: min(72vw, 600px);
   background: var(--accent-purple);
   bottom: -200px;
   right: -150px;
   animation: float-slow-reverse 28s ease-in-out infinite alternate;
+}
+
+@media screen and (max-width: 768px) {
+  .bg-grid {
+    background-size: 40px 40px;
+  }
+
+  .orb-blue {
+    width: min(60vw, 320px);
+    height: min(60vw, 320px);
+    top: -90px;
+    left: -50px;
+  }
+
+  .orb-purple {
+    width: min(64vw, 360px);
+    height: min(64vw, 360px);
+    bottom: -110px;
+    right: -60px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .bg-grid {
+    background-size: 32px 32px;
+  }
+
+  .orb-blue {
+    width: min(58vw, 240px);
+    height: min(58vw, 240px);
+    top: -70px;
+    left: -40px;
+  }
+
+  .orb-purple {
+    width: min(62vw, 280px);
+    height: min(62vw, 280px);
+    bottom: -80px;
+    right: -50px;
+  }
 }
 
 @keyframes float-slow {
