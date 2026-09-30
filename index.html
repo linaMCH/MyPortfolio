@@ -1,397 +1,315 @@
 <!DOCTYPE html>
-<html lang="fr" data-theme="dark">
+<html lang="fr" class="dark">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lina Maouche — Développeuse Full-Stack & Automatisation IA</title>
-  <link rel="icon" type="image/png" href="logoLM.png">
+  <title>Lina Maouche — Étudiante Ingénieure en Génie Logiciel</title>
 
-  <!-- SEO & Meta Metadata -->
+  <!-- SEO & Open Graph Metadata -->
   <meta name="description"
-    content="Portfolio de Lina Maouche, ingénieure logiciel full-stack spécialisée en automatisation IA. Java, Python, Vue.js, n8n, Gemini API.">
+    content="Portfolio bilingue de Lina Maouche, étudiante ingénieure en génie logiciel : projets, parcours, certifications et compétences techniques.">
   <meta name="keywords"
-    content="Full-Stack Developer, Automation, n8n, AI Agent, RAG, Java, Python, JavaScript, Vue.js, Spring Boot, DevOps, REST API, Software Engineer Algeria">
+    content="Lina Maouche, Génie Logiciel, Software Engineering, Java, Python, Vue.js, n8n, Gemini API, RAG, DzMarket, Béjaïa">
   <meta name="author" content="Lina Maouche">
   <meta property="og:title" content="Lina Maouche — Portfolio">
-  <meta property="og:description" content="Full-Stack Developer, AI Automation Engineer.">
+  <meta property="og:description"
+    content="Portfolio bilingue de Lina Maouche, étudiante ingénieure en génie logiciel : projets, parcours, certifications et compétences techniques.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://github.com/linaMCH">
+  <meta name="twitter:card" content="summary_large_image">
 
-  <!-- Font Awesome CDN -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="icon" type="image/png" href="logoLM.png">
 
   <!-- Custom Stylesheets -->
-  <link rel="stylesheet" href="css/themes.css">
-  <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-  <!-- Sticky Navbar Header -->
-  <header class="navbar" id="navbar">
-    <div class="container navbar-container">
-      <a href="#hero" class="logo" id="nav-logo" aria-label="Lina Maouche Portfolio Home">
-        <img src="logoLM.png" alt="Lina Maouche Logo" class="logo-img">
-      </a>
+  <!-- Custom Cursor: Outer Damped Ring + Instant Center Dot -->
+  <div id="site-cursor-ring" class="site-cursor site-cursor--ring" aria-hidden="true"></div>
+  <div id="site-cursor-dot" class="site-cursor site-cursor--dot" aria-hidden="true"></div>
 
-      <!-- Hamburger toggle on Mobile -->
-      <button class="hamburger" id="hamburger" aria-label="Toggle Navigation Menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+  <!-- Background Dots Overlay & Ambient Glow -->
+  <div class="dot-bg pointer-events-none fixed inset-0 opacity-60" style="position: fixed; inset: 0; pointer-events: none; z-index: 0;" aria-hidden="true"></div>
+  <div class="pointer-events-none fixed -top-40 left-1/2 size-[640px] -translate-x-1/2 rounded-full bg-primary/15 blur-[140px]" style="position: fixed; top: -10rem; left: 50%; width: 640px; height: 640px; transform: translateX(-50%); border-radius: 9999px; background: color-mix(in oklab, var(--primary) 15%, transparent); filter: blur(140px); pointer-events: none; z-index: 0;" aria-hidden="true"></div>
 
-      <!-- Nav Links -->
-      <nav class="nav-menu-wrapper">
-        <ul class="nav-menu" id="nav-menu">
-          <li><a href="#about" class="nav-link" data-i18n="nav.about">À propos</a></li>
-          <li><a href="#skills" class="nav-link" data-i18n="nav.skills">Compétences</a></li>
-          <li><a href="#projects" class="nav-link" data-i18n="nav.projects">Projets</a></li>
-          <li><a href="#automation" class="nav-link" data-i18n="nav.automation">Automatisation</a></li>
-          <li><a href="#certifications" class="nav-link" data-i18n="nav.certs">Certifications</a></li>
-          <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
-        </ul>
+  <!-- Floating Pill Navbar Header -->
+  <header class="floating-header">
+    <div class="glass floating-navbar">
+      <a href="#top" class="logo-badge" aria-label="Accueil">LM</a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="nav-links-desktop">
+        <a href="#about" class="label-mono nav-link-item" data-nav-index="0">À propos</a>
+        <a href="#projects" class="label-mono nav-link-item" data-nav-index="1">Projets</a>
+        <a href="#certifications" class="label-mono nav-link-item" data-nav-index="2">Certifs</a>
+        <a href="#skills" class="label-mono nav-link-item" data-nav-index="3">Compétences</a>
+        <a href="#contact" class="label-mono nav-link-item" data-nav-index="4">Contact</a>
       </nav>
 
-      <!-- Nav Action Controls -->
-      <div class="nav-actions">
-        <!-- Language Switcher Button -->
-        <button class="btn-icon lang-toggle" id="lang-toggle" aria-label="Toggle Language" title="Passer en anglais">
-          <i class="fa-solid fa-globe"></i>
-          <span id="lang-text">EN 🇬🇧</span>
+      <!-- Action Controls -->
+      <div class="header-controls">
+        <button id="lang-toggle" class="icon-btn" aria-label="Langue">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 4px;"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span id="lang-label">FR</span>
         </button>
 
-        <!-- Dark/Light Theme Switcher Button -->
-        <button class="btn-icon" id="theme-toggle" aria-label="Toggle Dark / Light Theme" title="Switch Theme">
-          <i class="fa-solid fa-sun"></i>
+        <button id="theme-toggle" class="icon-btn icon-btn-round" aria-label="Thème">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+        </button>
+
+        <button id="mobile-menu-btn" class="icon-btn icon-btn-round mobile-menu-btn" aria-label="Menu">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
         </button>
       </div>
+    </div>
+
+    <!-- Mobile Navigation Panel -->
+    <div id="mobile-nav-panel" class="glass mobile-nav-panel" style="display: none;">
+      <a href="#about" class="label-mono mobile-nav-item" data-nav-index="0">À propos</a>
+      <a href="#projects" class="label-mono mobile-nav-item" data-nav-index="1">Projets</a>
+      <a href="#certifications" class="label-mono mobile-nav-item" data-nav-index="2">Certifs</a>
+      <a href="#skills" class="label-mono mobile-nav-item" data-nav-index="3">Compétences</a>
+      <a href="#contact" class="label-mono mobile-nav-item" data-nav-index="4">Contact</a>
     </div>
   </header>
 
-  <!-- HERO SECTION -->
-  <section class="hero" id="hero">
-    <!-- CSS-only Grid & Floating glow orbs -->
-    <div class="bg-grid"></div>
-    <div class="orb orb-blue"></div>
-    <div class="orb orb-purple"></div>
+  <!-- MAIN CONTENT -->
+  <main id="top">
 
-    <div class="container">
-      <div class="hero-content">
-        <span class="hero-subtitle-intro" data-i18n="hero.intro">Bonjour, je suis</span>
-        <h1 class="hero-title">Lina Maouche</h1>
-
-        <!-- Cycling Typewriter roles -->
-        <div class="hero-subtitle-cycling">
-          <span class="hero-subtitle-text" id="typewriter-text"></span>
-          <span class="typewriter-cursor"></span>
-        </div>
-
-        <p class="hero-desc" data-i18n="hero.pitch">
-          Étudiante en 3ème année cycle ingénieur en Génie Logiciel, spécialisée en développement full-stack,
-          et automatisation. Expertise solide en Java et C++, attachée à la qualité du code, aux pratiques
-          DevOps et aux architectures modernes.
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+      <div class="hero-text-content">
+        <p class="label-mono location-badge">
+          <span class="badge-dot"></span>
+          <span id="hero-badge-year">Bejaïa · 2026</span>
         </p>
-
-        <div class="hero-ctas">
-          <a href="#projects" class="btn btn-primary" data-i18n="hero.cta.projects">Voir mes projets</a>
-          <a href="assets/cv/Lina_Maouche_CV.pdf" class="btn btn-secondary" download="Lina_Maouche_CV.pdf"
-            data-i18n="hero.cta.cv" data-i18n-attr="title:hero.cta.cv">Télécharger le CV</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT SECTION -->
-  <section class="about" id="about">
-    <div class="container">
-      <div class="section-header reveal">
-        <div>
-          <span class="section-eyebrow">À propos</span>
-          <h2 class="section-title" data-i18n="about.title">À propos de moi</h2>
-        </div>
-        <p class="section-subtitle" data-i18n="about.subtitle">Découvrez mon parcours et mes compétences clés</p>
-      </div>
-
-      <div class="about-grid">
-        <div class="about-img-container reveal delay-100">
-          <div class="about-img-wrapper">
-            <img src="assets/img/profile.svg" alt="Lina Maouche" class="about-img" id="profile-image">
-          </div>
-        </div>
-
-        <div class="about-info reveal delay-200">
-          <h3 data-i18n="about.whoami">Qui suis-je ?</h3>
-          <p class="about-bio" data-i18n="about.bio">
-            Étudiante en 3ème année cycle ingénieur en Génie Logiciel à l'Université de Béjaïa, je me passionne pour le
-            développement full-stack et l'automatisation. Mon parcours académique m'a permis
-            d'acquérir une expertise solide en programmation structurée et orientée objet avec Java et C++, tout en
-            renforçant mes compétences en administration système et intégration de services modernes. Mon
-            engagement : produire un code propre, performant et hautement sécurisé en respectant les meilleures
-            pratiques de l'architecture logicielle.
-          </p>
-
-          <!-- Quick stats cards -->
-          <div class="stats-grid">
-            <div class="stat-card">
-              <div class="stat-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-              <div>
-                <div class="stat-title" data-i18n="about.stat.edu.title">Formation</div>
-                <div class="stat-value" data-i18n="about.stat.edu.val">ING3 — Université de Béjaïa</div>
-              </div>
-            </div>
-
-            <div class="stat-card">
-              <div class="stat-icon"><i class="fa-solid fa-location-dot"></i></div>
-              <div>
-                <div class="stat-title" data-i18n="about.stat.loc.title">Localisation</div>
-                <div class="stat-value" data-i18n="about.stat.loc.val">Béjaïa, Algérie</div>
-              </div>
-            </div>
-
-            <div class="stat-card">
-              <div class="stat-icon"><i class="fa-solid fa-language"></i></div>
-              <div>
-                <div class="stat-title" data-i18n="about.stat.lang.title">Langues</div>
-                <div class="stat-value" data-i18n="about.stat.lang.val">FR / EN / Kabyle / AR</div>
-              </div>
-            </div>
-
-            <div class="stat-card">
-              <div class="stat-icon"><i class="fa-solid fa-calendar-check"></i></div>
-              <div>
-                <div class="stat-title" data-i18n="about.stat.status.title">Disponibilité</div>
-                <div class="stat-value" data-i18n="about.stat.status.val">Disponible pour stages & opportunités</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Highlight Keywords (Visible + Semantic SEO) -->
-          <div class="keywords-container">
-            <span class="keyword-tag">Full-Stack Development</span>
-            <span class="keyword-tag">Automation</span>
-            <span class="keyword-tag">DevOps</span>
-            <span class="keyword-tag">REST APIs</span>
-            <span class="keyword-tag">Software Architecture</span>
-            <span class="keyword-tag">Python</span>
-            <span class="keyword-tag">Java</span>
-            <span class="keyword-tag">JavaScript</span>
-            <span class="keyword-tag">n8n</span>
-            <span class="keyword-tag">AI Agent</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SKILLS SECTION -->
-  <section class="skills" id="skills">
-    <div class="container">
-      <div class="section-header reveal">
-        <div>
-          <span class="section-eyebrow">Stack</span>
-          <h2 class="section-title" data-i18n="skills.title">Compétences</h2>
-        </div>
-        <p class="section-subtitle" data-i18n="skills.subtitle">Mes outils, langages et expertises techniques</p>
-      </div>
-
-      <!-- Rendered dynamically from skills.json -->
-      <div class="skills-container" id="skills-render-container">
-        <!-- Javascript loads components here -->
-      </div>
-    </div>
-  </section>
-
-  <!-- PROJECTS SECTION -->
-  <section class="projects" id="projects">
-    <div class="container">
-      <div class="section-header reveal">
-        <div>
-          <span class="section-eyebrow">Réalisations</span>
-          <h2 class="section-title" data-i18n="projects.title">Projets récents</h2>
-        </div>
-        <p class="section-subtitle" data-i18n="projects.subtitle">Découvrez une sélection de mes réalisations
-          académiques et personnelles</p>
-      </div>
-
-      <!-- Filter bar tabs -->
-      <div class="filter-bar reveal">
-        <button class="filter-btn active" data-filter="All" data-i18n="projects.filter.all">Tous</button>
-        <button class="filter-btn" data-filter="Full-Stack" data-i18n="projects.filter.fullstack">Full-Stack</button>
-        <button class="filter-btn" data-filter="Security" data-i18n="projects.filter.security">Sécurité</button>
-        <button class="filter-btn" data-filter="Automation"
-          data-i18n="projects.filter.automation">Automatisation</button>
-        <button class="filter-btn" data-filter="AI-Automation" data-i18n="projects.filter.ai">IA & n8n</button>
-      </div>
-
-      <!-- Projects Grid render dynamically -->
-      <div class="projects-grid" id="projects-render-container">
-        <!-- Javascript loads project cards here -->
-      </div>
-    </div>
-  </section>
-
-  <!-- N8N AUTOMATION SECTION -->
-  <section class="automation" id="automation">
-    <div class="container">
-      <div class="section-header reveal">
-        <div>
-          <span class="section-eyebrow">n8n</span>
-          <h2 class="section-title" data-i18n="automation.title">Formation n8n</h2>
-        </div>
-        <p class="section-subtitle" data-i18n="automation.subtitle">7 jours de pratique intensive en automatisation de
-          workflows et architecture d'agents IA</p>
-      </div>
-
-      <!-- Training context banner -->
-      <div class="automation-context reveal">
-        <div class="automation-context-icon">
-          <i class="fa-solid fa-diagram-project"></i>
-        </div>
-        <div class="automation-context-text">
-          <span class="automation-context-label" data-i18n="automation.tag">Juillet 2026 — Formation intensive 7
-            jours</span>
-          <p class="automation-context-desc" id="automation-intro-text">
-            Cinq workflows construits sur n8n couvrant l'ensemble du spectre — du traitement de formulaires à
-            l'architecture d'agents IA avec mémoire et base de connaissances.
-          </p>
-        </div>
-      </div>
-
-      <!-- Bento grid — rendered by JS -->
-      <div class="automation-grid" id="automation-render-container">
-        <!-- Javascript loads automation cards here -->
-      </div>
-
-      <!-- Cross-cutting skills -->
-      <div class="automation-skills-bar reveal">
-        <span class="automation-skills-bar-label" data-i18n="automation.skills.label">Compétences transverses</span>
-        <div class="automation-skills-list">
-          <span class="automation-skill-chip">Triggers multiples (webhook, form, Gmail, chat, cron)</span>
-          <span class="automation-skill-chip">Transformation de données</span>
-          <span class="automation-skill-chip">Logique conditionnelle</span>
-          <span class="automation-skill-chip">OAuth (Gmail, Slack, Notion)</span>
-          <span class="automation-skill-chip">Architecture agent IA (Model / Memory / Tool)</span>
-          <span class="automation-skill-chip">RAG & Vector Store</span>
-          <span class="automation-skill-chip">Prompt engineering</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CERTIFICATIONS SECTION -->
-  <section class="certifications" id="certifications">
-    <div class="container">
-      <div class="section-header reveal">
-        <div>
-          <span class="section-eyebrow">Accréditations</span>
-          <h2 class="section-title" data-i18n="certs.title">Certifications</h2>
-        </div>
-        <p class="section-subtitle" data-i18n="certs.subtitle">Mes accréditations et formations complémentaires</p>
-      </div>
-
-      <!-- Certs Grid render dynamically -->
-      <div class="certs-grid" id="certs-render-container">
-        <!-- Javascript loads cert cards here -->
-      </div>
-    </div>
-  </section>
-
-  <!-- FULLSCREEN LIGHTBOX MODAL FOR CERT PHOTOS -->
-  <div class="lightbox" id="lightbox" aria-modal="true" role="dialog">
-    <div class="lightbox-content zoom-in">
-      <span class="lightbox-close" id="lightbox-close" title="Fermer"><i class="fa-solid fa-xmark"></i></span>
-      <img src="" alt="Certificat grand format" class="lightbox-img" id="lightbox-img">
-      <div class="lightbox-caption" id="lightbox-caption"></div>
-    </div>
-  </div>
-
-  <!-- CONTACT SECTION -->
-  <section class="contact" id="contact">
-    <div class="container">
-      <div class="section-header reveal">
-        <div>
-          <span class="section-eyebrow">Contact</span>
-          <h2 class="section-title" data-i18n="contact.title">Entrons en contact</h2>
-        </div>
-        <p class="section-subtitle" data-i18n="contact.subtitle">Une opportunité, un projet ou une question ? N'hésitez
-          pas !</p>
-      </div>
-
-      <div class="contact-container reveal">
-        <p class="contact-text" data-i18n="contact.invite">
-          Je suis actuellement ouverte aux opportunités de stage de fin d'études et aux projets de collaboration dans le
-          domaine du génie logiciel, du web et de l'automatisation.
+        <h1 class="hero-title">
+          Lina<br />
+          <span class="text-gradient">Maouche</span>
+        </h1>
+        <p class="hero-roles">
+          <span id="typewriter-text" class="font-mono"></span><span class="animate-blink" style="color: var(--primary);">▍</span>
         </p>
-
-        <!-- 4 Grid Contact Cards -->
-        <div class="contact-grid">
-          <a href="https://www.linkedin.com/in/lina-maouche-774510334/" target="_blank" rel="noopener noreferrer"
-            class="contact-card linkedin reveal delay-100">
-            <div class="contact-card-icon"><i class="fa-brands fa-linkedin-in"></i></div>
-            <div class="contact-card-title" data-i18n="contact.card.linkedin">LinkedIn</div>
-            <div class="contact-card-value">Lina Maouche</div>
+        <p id="hero-desc" class="hero-desc">
+          Je construis des logiciels solides, avec un œil sur l'IA de demain : utile, fiable, sécurisée.
+        </p>
+        <div class="hero-actions">
+          <a href="#about" class="btn-primary-pill">
+            <span id="hero-cta-explore">Explorer mon univers</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
-
-          <a href="https://github.com/linaMCH" target="_blank" rel="noopener noreferrer"
-            class="contact-card github reveal delay-200">
-            <div class="contact-card-icon"><i class="fa-brands fa-github"></i></div>
-            <div class="contact-card-title" data-i18n="contact.card.github">GitHub</div>
-            <div class="contact-card-value">linaMCH</div>
-          </a>
-
-          <a href="mailto:linamaouchedev@gmail.com" class="contact-card email reveal delay-300">
-            <div class="contact-card-icon"><i class="fa-regular fa-envelope"></i></div>
-            <div class="contact-card-title" data-i18n="contact.card.email">Email</div>
-            <div class="contact-card-value">linamaouchedev@gmail.com</div>
-          </a>
-
-          <a href="tel:+213778268794" class="contact-card phone reveal delay-400">
-            <div class="contact-card-icon"><i class="fa-solid fa-phone"></i></div>
-            <div class="contact-card-title" data-i18n="contact.card.phone">Téléphone</div>
-            <div class="contact-card-value">+213 778 268 794</div>
-          </a>
-        </div>
-
-        <div class="contact-cta-wrapper reveal delay-500">
-          <a href="assets/cv/Lina_Maouche_CV.pdf" class="btn btn-primary contact-cta" download="Lina_Maouche_CV.pdf"
-            data-i18n="contact.cta.cv" data-i18n-attr="title:contact.cta.cv">
-            <i class="fa-regular fa-file-pdf"></i>
-            <span>Télécharger mon CV (PDF)</span>
+          <a href="assets/cv/Lina_Maouche_CV.pdf" download class="btn-link-cv">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span id="hero-cta-cv">Mon CV</span>
           </a>
         </div>
       </div>
-    </div>
-  </section>
+
+      <!-- Hero Signal Particle Canvas -->
+      <div class="hero-signal-wrapper" aria-hidden="true">
+        <div class="hero-signal-container">
+          <div class="signal-halo" style="position: absolute; inset: -12%; pointer-events: none;"></div>
+          <canvas id="signal-canvas" style="width: 100%; height: 100%;"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUOTE SECTION -->
+    <section data-reveal class="quote-section">
+      <p id="quote-text" class="quote-text">
+        « Concevoir des systèmes intelligents, c'est bien. Les rendre dignes de confiance, c'est mon ambition. »
+      </p>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="section-container">
+      <div data-reveal style="margin-bottom: 2.5rem;">
+        <p class="label-mono" style="color: var(--primary); display: flex; align-items: center; gap: 0.5rem;">
+          <span style="height: 1px; width: 1.5rem; background-color: var(--primary);"></span>
+          <span id="about-label">Éducation & parcours</span>
+        </p>
+      </div>
+
+      <div class="education-grid">
+        <!-- Education Timeline -->
+        <ol id="education-timeline" data-reveal class="timeline-list">
+          <!-- Rendered dynamically from JS -->
+        </ol>
+
+        <!-- Qualities Marquee Box -->
+        <div data-reveal class="qualities-box glass rounded-2xl">
+          <p id="philo-title" class="label-mono" style="color: var(--muted-foreground); margin-bottom: 1.25rem;">Qualités</p>
+          <div id="qualities-marquees">
+            <!-- Rendered dynamically from JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Professional Experience -->
+      <div data-reveal class="exp-section">
+        <p id="exp-label" class="label-mono" style="color: var(--muted-foreground); margin-bottom: 1.5rem;">Expérience professionnelle</p>
+        <div id="experience-cards">
+          <!-- Rendered dynamically from JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="section-container">
+      <div data-reveal style="margin-bottom: 2rem;">
+        <p class="label-mono" style="color: var(--primary); display: flex; align-items: center; gap: 0.5rem;">
+          <span style="height: 1px; width: 1.5rem; background-color: var(--primary);"></span>
+          <span id="proj-label">Portfolio de réalisations</span>
+        </p>
+        <h2 id="proj-title" class="section-h2" style="margin-bottom: 1.5rem;">Projets sélectionnés</h2>
+
+        <!-- Projects Filter Bar -->
+        <div id="project-filters" class="project-filter-bar">
+          <!-- Rendered dynamically from JS -->
+        </div>
+      </div>
+
+      <!-- Projects Grid -->
+      <div id="projects-grid" class="projects-grid-3cols">
+        <!-- Rendered dynamically from JS -->
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS SECTION -->
+    <section id="certifications" class="section-container">
+      <div data-reveal class="certs-header-row">
+        <div>
+          <p class="label-mono" style="color: var(--primary); display: flex; align-items: center; gap: 0.5rem;">
+            <span style="height: 1px; width: 1.5rem; background-color: var(--primary);"></span>
+            <span id="cert-label">Certifications</span>
+          </p>
+          <h2 id="cert-title" class="section-h2" style="margin-bottom: 0;">Apprentissage continu</h2>
+        </div>
+        <div class="carousel-nav-btns">
+          <button id="certs-prev-btn" class="carousel-btn" aria-label="Précédent">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          </button>
+          <button id="certs-next-btn" class="carousel-btn" aria-label="Suivant">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 5"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Certifications Track Carousel -->
+      <div id="certs-track" class="certs-track-wrapper">
+        <!-- Rendered dynamically from JS -->
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="section-container">
+      <div data-reveal>
+        <p class="label-mono" style="color: var(--primary); display: flex; align-items: center; gap: 0.5rem;">
+          <span style="height: 1px; width: 1.5rem; background-color: var(--primary);"></span>
+          <span id="skills-label">Expertise technique</span>
+        </p>
+        <h2 id="skills-title" class="section-h2">Compétences techniques</h2>
+      </div>
+
+      <!-- Skills Cards Grid -->
+      <div id="skills-grid" class="skills-grid-4cols">
+        <!-- Rendered dynamically from JS -->
+      </div>
+    </section>
+
+    <!-- LANGUAGES & INTERESTS SECTION -->
+    <section class="section-container">
+      <div data-reveal>
+        <p class="label-mono" style="color: var(--primary); display: flex; align-items: center; gap: 0.5rem;">
+          <span style="height: 1px; width: 1.5rem; background-color: var(--primary);"></span>
+          <span id="lang-label-section">Langues & centres d'intérêt</span>
+        </p>
+        <h2 id="lang-title-section" class="section-h2">Au-delà du code</h2>
+      </div>
+
+      <div class="lang-int-grid">
+        <!-- Languages Boxes -->
+        <div data-reveal>
+          <p id="langs-sub" class="label-mono" style="color: var(--muted-foreground); margin-bottom: 1rem;">Langues</p>
+          <div id="languages-list" class="languages-grid">
+            <!-- Rendered dynamically from JS -->
+          </div>
+        </div>
+
+        <!-- Interests Scrolling Marquee -->
+        <div data-reveal style="min-width: 0;">
+          <p id="int-sub" class="label-mono" style="color: var(--muted-foreground); margin-bottom: 1rem;">Centres d'intérêt</p>
+          <div id="interests-marquees">
+            <!-- Rendered dynamically from JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
 
   <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container footer-container">
-      <div class="footer-text">
-        &copy; 2026 — <span data-i18n="footer.builtby">Conçu & réalisé par Lina Maouche</span>. <span
-          data-i18n="footer.rights">Tous droits réservés</span>.
+  <footer id="contact" class="footer-section">
+    <div class="footer-content">
+      <div class="footer-top-row">
+        <p class="label-mono" style="color: var(--primary); display: flex; align-items: center; gap: 0.5rem;">
+          <span style="height: 1px; width: 1.5rem; background-color: var(--primary);"></span>
+          <span id="together-label">Ouverte aux opportunités professionnelles.</span>
+        </p>
+        <div class="social-links">
+          <a href="https://github.com/linaMCH" target="_blank" rel="noreferrer" class="glass social-btn" aria-label="GitHub">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/lina-maouche-774510334/" target="_blank" rel="noreferrer" class="glass social-btn" aria-label="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+        </div>
       </div>
 
-      <div class="footer-tech">
-        <i class="fa-brands fa-html5" title="HTML5"></i>
-        <i class="fa-brands fa-css3-alt" title="CSS3"></i>
-        <i class="fa-brands fa-js" title="JavaScript (ES6)"></i>
-      </div>
+      <a href="mailto:linamaouchedev@gmail.com" class="footer-email-link">
+        linamaouchedev@gmail.com
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+
+      <p id="rights-text" class="copyright-text">
+        © 2026 Lina Maouche — Tous droits réservés.
+      </p>
     </div>
   </footer>
 
-  <!-- Back to top button -->
-  <a href="#hero" class="back-to-top" id="back-to-top" aria-label="Back to Top" title="Back to top">
-    <i class="fa-solid fa-arrow-up"></i>
-  </a>
+  <!-- LIGHTBOX GALLERY MODAL -->
+  <div id="lightbox-modal" class="lightbox-modal" aria-modal="true" role="dialog">
+    <div class="lightbox-container">
+      <button id="lightbox-close-btn" class="lightbox-close-btn" title="Fermer">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
 
-  <!-- Script Declarations -->
+      <div class="lightbox-media-wrapper">
+        <button id="lightbox-prev-btn" class="lightbox-nav-btn lightbox-prev-btn" title="Précédent">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <img id="lightbox-img" src="" alt="Aperçu grand format" class="lightbox-media" />
+        <button id="lightbox-next-btn" class="lightbox-nav-btn lightbox-next-btn" title="Suivant">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+
+      <div class="lightbox-info">
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 1rem;">
+          <h3 id="lightbox-title" class="lightbox-title"></h3>
+          <span id="lightbox-counter" class="lightbox-counter label-mono"></span>
+        </div>
+        <p id="lightbox-subtitle" class="lightbox-subtitle"></p>
+        <p id="lightbox-desc" class="lightbox-desc"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Modules -->
   <script src="js/i18n.js"></script>
-  <script src="js/theme.js"></script>
   <script src="js/main.js"></script>
 </body>
 

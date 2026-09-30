@@ -2,278 +2,101 @@
   {
     "id": "project-compiler",
     "title": "Compilateur C → Java",
-    "subtitle": {
-      "fr": "Analyseur syntaxique & sémantique",
-      "en": "Syntactic & semantic analyzer"
-    },
-    "date": {
-      "fr": "Mars 2026",
-      "en": "March 2026"
-    },
+    "category": "Desktop",
+    "tag": { "fr": "Desktop • Compilation", "en": "Desktop • Compiler" },
     "desc": {
-      "fr": "Développement complet d'un compilateur fonctionnel incluant génération d'AST et analyse syntaxique/sémantique.",
+      "fr": "Développement d'un compilateur fonctionnel incluant génération d'AST et analyse syntaxique/sémantique.",
       "en": "Full compiler implementation with AST generation and syntactic/semantic analysis."
     },
-    "tags": [
-      "Java",
-      "Compiler Design",
-      "AST",
-      "Automata"
-    ],
-    "category": "Automation",
-    "github": "https://github.com/linaMCH/Compilateur-C",
     "image": "assets/img/projects/project-compiler.jpg",
-    "collaboration": true,
-    "collaborators": "Imene Sh ",
-    "myRole": {
-      "fr": "Implémentation du parseur",
-      "en": "Parser implementation"
-    }
+    "gallery": [
+      { "title": { "fr": "Compilateur C → Java", "en": "C → Java Compiler" }, "image": "assets/img/projects/project-compiler.jpg" }
+    ],
+    "github": "https://github.com/linaMCH/Compilateur-C",
+    "demo": null
   },
   {
     "id": "project-stegacrypt",
     "title": "StegaCrypt",
-    "subtitle": {
-      "fr": "Chiffrement & Stéganographie",
-      "en": "Encryption & Steganography"
-    },
-    "date": "2025–2026",
+    "category": "Sécurité",
+    "tag": { "fr": "Desktop • Sécurité", "en": "Desktop • Security" },
     "desc": {
-      "fr": "Application desktop combinant algorithmes de chiffrement/déchiffrement et stéganographie pour dissimuler des données dans des fichiers image.",
-      "en": "Desktop app combining encryption/decryption algorithms and steganography to hide data inside image files."
+      "fr": "Application desktop combinant chiffrement/déchiffrement et stéganographie dans des images.",
+      "en": "Desktop app combining encryption/decryption and steganography to hide data in images."
     },
-    "tags": [
-      "Python",
-      "JavaFX",
-      "Cryptography",
-      "Steganography",
-      "Security"
-    ],
-    "category": "Security",
-    "github": "https://github.com/ImeneeSh/StegaCrypt",
     "image": "assets/img/projects/project-stegacrypt.jpg",
-    "collaboration": true,
-    "collaborator": "Imene Sh",
-    "myRole": {
-      "fr": "Implémentation des algorithmes de chiffrement et de stéganographie",
-      "en": "Implementation of encryption and steganography algorithms"
-    }
+    "gallery": [
+      { "title": { "fr": "StegaCrypt", "en": "StegaCrypt" }, "image": "assets/img/projects/project-stegacrypt.jpg" }
+    ],
+    "github": "https://github.com/ImeneeSh/StegaCrypt",
+    "demo": null
   },
   {
     "id": "project-pharmago",
     "title": "PharmaGO",
-    "subtitle": {
-      "fr": "Gestion de Livraisons",
-      "en": "Delivery Management System"
-    },
-    "date": "2025–2026",
+    "category": "Desktop",
+    "tag": { "fr": "Desktop • Santé", "en": "Desktop • Health" },
     "desc": {
       "fr": "Application desktop pour l'optimisation des flux pharmaceutiques avec interface ergonomique.",
       "en": "Desktop application for optimizing pharmaceutical delivery workflows with ergonomic UI."
     },
-    "tags": [
-      "JavaFX",
-      "UX Design",
-      "Optimization",
-      "Desktop App"
-    ],
-    "category": "Full-Stack",
-    "github": "https://github.com/ImeneeSh/PharmaGo",
     "image": "assets/img/projects/project-pharmago.jpg",
-    "collaboration": true,
-    "collaborator": "Imene Sh.",
-    "myRole": {
-      "fr": "Co-développement full-stack en binôme : conception de l'interface utilisateur et optimisation des flux applicatifs",
-      "en": "Full-stack co-development as a pair: UI design and application workflow optimization"
-    }
+    "gallery": [
+      { "title": { "fr": "PharmaGO", "en": "PharmaGO" }, "image": "assets/img/projects/project-pharmago.jpg" }
+    ],
+    "github": "https://github.com/ImeneeSh/PharmaGo",
+    "demo": null
+  },
+  {
+    "id": "project-dzmarket",
+    "title": "DzMarket",
+    "category": "Web",
+    "tag": { "fr": "Web • E-commerce", "en": "Web • E-commerce" },
+    "desc": {
+      "fr": "Place de marché en ligne algérienne avec catégories de produits, moteur de recherche et gestion d'annonces.",
+      "en": "Algerian online marketplace featuring product categories, search engine, and listing management."
+    },
+    "image": "assets/img/projects/project-dzmarket.svg",
+    "gallery": [
+      { "title": { "fr": "DzMarket — Logo & Identité", "en": "DzMarket — Logo & Identity" }, "image": "assets/img/projects/project-dzmarket.svg" }
+    ],
+    "github": "https://github.com/linaMCH/DzMarket.git",
+    "demo": "https://dz-market-mu.vercel.app/"
   },
   {
     "id": "project-assirem",
     "title": "Assirem Natation",
-    "subtitle": {
-      "fr": "Plateforme Web Club",
-      "en": "Swimming Club Web Platform"
-    },
-    "date": "2025–2026",
+    "category": "Web",
+    "tag": { "fr": "Web • Sport", "en": "Web • Sports" },
     "desc": {
-      "fr": "Site web club avec architecture dynamique, composants réutilisables et interface utilisateur moderne.",
+      "fr": "Site web club avec architecture dynamique, composants réutilisables et interface moderne.",
       "en": "Club website with dynamic architecture, reusable components and modern UI."
     },
-    "tags": [
-      "Vue.js",
-      "Spring Boot",
-      "REST API",
-      "Full-Stack"
-    ],
-    "category": "Full-Stack",
-    "github": null,
-    "privateRepo": true,
     "image": "assets/img/projects/project-assirem.jpg",
-    "collaboration": true,
-    "collaborator": "Nour El Imene Sahi",
-    "myRole": {
-      "fr": "Co-développement full-stack : conception et implémentation de modules front-end et back-end en binôme",
-      "en": "Full-stack co-development: design and implementation of front-end and back-end modules as a pair"
-    }
+    "gallery": [
+      { "title": { "fr": "Assirem Natation", "en": "Assirem Natation" }, "image": "assets/img/projects/project-assirem.jpg" }
+    ],
+    "github": null,
+    "demo": "https://www.assirem-natation.com/"
   },
   {
-    "id": "n8n-form-notion",
-    "title": "Formulaire → Notion",
-    "subtitle": {
-      "fr": "Capture de contacts automatisée",
-      "en": "Automated contact capture"
-    },
-    "date": {
-      "fr": "Juillet 2026",
-      "en": "July 2026"
-    },
+    "id": "n8n-suite",
+    "title": "Automatisations & Agents IA (n8n)",
+    "category": "IA",
+    "tag": { "fr": "IA • Automation", "en": "AI • Automation" },
     "desc": {
-      "fr": "Workflow de capture de contacts via formulaire n8n : filtrage des emails invalides par expression régulière, puis création automatique d'une entrée structurée dans une base Notion.",
-      "en": "Contact capture workflow via n8n form: filtering invalid emails with regex, then automatically creating structured entries in a Notion database."
+      "fr": "Suite de workflows et agents IA autonomes (RAG, mémoire conversationnelle, triage Gmail & Notion, parsing JSON).",
+      "en": "Suite of autonomous AI agents & workflows (RAG, memory buffer, Gmail & Notion triage, JSON parsing)."
     },
-    "tags": [
-      "n8n",
-      "Notion API",
-      "Form Trigger",
-      "Data Validation"
+    "image": "assets/img/projects/RAG_retrieverFlow.png",
+    "gallery": [
+      { "title": { "fr": "Assistant RAG Vector Store", "en": "Vector Store RAG Assistant" }, "image": "assets/img/projects/RAG_retrieverFlow.png" },
+      { "title": { "fr": "Trieur d'e-mails intelligent (Gmail & Slack)", "en": "Smart Email Classifier (Gmail & Slack)" }, "image": "assets/img/projects/trieur_mail_urgent.png" },
+      { "title": { "fr": "Agent conversationnel avec Mémoire", "en": "Conversational Agent with Memory" }, "image": "assets/img/projects/RAG_dataloead.png" },
+      { "title": { "fr": "Formulaire → Notion", "en": "Form → Notion Workflow" }, "image": "assets/img/projects/formulaire_notion.png" },
+      { "title": { "fr": "IA à sortie structurée JSON (Gemini)", "en": "Structured JSON AI (Gemini)" }, "image": "assets/img/projects/ia_sortie_structurée.png" }
     ],
-    "category": "AI-Automation",
-    "github": null,
-    "privateRepo": false,
-    "n8nWorkflow": true,
-    "complexity": {
-      "fr": "Débutant",
-      "en": "Beginner"
-    },
-    "image": "assets/img/projects/formulaire_notion.png"
-  },
-  {
-    "id": "n8n-gemini-json",
-    "title": "IA à sortie structurée",
-    "subtitle": {
-      "fr": "Parsing JSON via Gemini",
-      "en": "JSON parsing via Gemini"
-    },
-    "date": {
-      "fr": "Juillet 2026",
-      "en": "July 2026"
-    },
-    "desc": {
-      "fr": "Appel à l'API Google Gemini avec un prompt forçant une réponse JSON stricte, suivi du parsing et de l'extraction des données côté JavaScript.",
-      "en": "Google Gemini API call with a prompt enforcing strict JSON output, followed by JavaScript-side parsing and data extraction."
-    },
-    "tags": [
-      "n8n",
-      "Google Gemini",
-      "JSON",
-      "JavaScript",
-      "Prompt Engineering"
-    ],
-    "category": "AI-Automation",
-    "github": null,
-    "privateRepo": false,
-    "n8nWorkflow": true,
-    "complexity": {
-      "fr": "Intermédiaire",
-      "en": "Intermediate"
-    },
-    "image": "assets/img/projects/ia_sortie_structurée.png"
-  },
-  {
-    "id": "n8n-email-triage",
-    "title": "Trieur d'e-mails intelligent",
-    "subtitle": {
-      "fr": "Gmail → Gemini → Slack + brouillon auto",
-      "en": "Gmail → Gemini → Slack + auto-draft"
-    },
-    "date": {
-      "fr": "Juillet 2026",
-      "en": "July 2026"
-    },
-    "desc": {
-      "fr": "Gmail Trigger déclenche une analyse Gemini (sentiment, catégorie, résumé, brouillon de réponse) puis un branchement conditionnel : alerte Slack et brouillon Gmail automatique pour les messages urgents. Intégrations OAuth Gmail et Slack.",
-      "en": "Gmail Trigger fires a Gemini analysis (sentiment, category, summary, reply draft) then conditional branching: Slack alert and auto Gmail draft for urgent messages. Gmail + Slack OAuth integrations."
-    },
-    "tags": [
-      "n8n",
-      "Gmail API",
-      "Slack",
-      "Google Gemini",
-      "OAuth",
-      "Conditional Logic"
-    ],
-    "category": "AI-Automation",
-    "github": null,
-    "privateRepo": false,
-    "n8nWorkflow": true,
-    "complexity": {
-      "fr": "Avancé",
-      "en": "Advanced"
-    },
-    "image": "assets/img/projects/trieur_mail_urgent.png"
-  },
-  {
-    "id": "n8n-agent-memory",
-    "title": "Agent conversationnel",
-    "subtitle": {
-      "fr": "Mémoire + outils personnalisés",
-      "en": "Memory + custom tools"
-    },
-    "date": {
-      "fr": "Juillet 2026",
-      "en": "July 2026"
-    },
-    "desc": {
-      "fr": "Agent IA avec mémoire de conversation (Window Buffer Memory) et deux outils personnalisés — recherche client et calcul de remise. L'agent choisit lui-même quel outil appeler selon le contexte de la conversation.",
-      "en": "AI agent with conversation memory (Window Buffer Memory) and two custom tools — customer lookup and discount calculation. The agent autonomously decides which tool to call based on conversation context."
-    },
-    "tags": [
-      "n8n",
-      "AI Agent",
-      "Window Buffer Memory",
-      "Tool Calling",
-      "LLM"
-    ],
-    "category": "AI-Automation",
-    "github": null,
-    "privateRepo": false,
-    "n8nWorkflow": true,
-    "complexity": {
-      "fr": "Avancé",
-      "en": "Advanced"
-    },
-    "image": "assets/img/projects/RAG_dataloead.png"
-  },
-  {
-    "id": "n8n-rag-assistant",
-    "title": "Assistant RAG",
-    "subtitle": {
-      "fr": "Base de connaissances + Vector Store",
-      "en": "Knowledge base + Vector Store"
-    },
-    "date": {
-      "fr": "Juillet 2026",
-      "en": "July 2026"
-    },
-    "desc": {
-      "fr": "Agent qui répond à partir d'une base de connaissances indexée par embeddings (Vector Store). Refuse explicitement de répondre aux questions hors périmètre défini.",
-      "en": "Agent that answers from an embedding-indexed knowledge base (Vector Store). Explicitly refuses to respond to out-of-scope questions."
-    },
-    "tags": [
-      "n8n",
-      "RAG",
-      "Vector Store",
-      "Embeddings",
-      "AI Agent"
-    ],
-    "category": "AI-Automation",
-    "github": null,
-    "privateRepo": false,
-    "n8nWorkflow": true,
-    "complexity": {
-      "fr": "Avancé",
-      "en": "Advanced"
-    },
-    "image": "assets/img/projects/RAG_retrieverFlow.png"
+    "github": "https://github.com/linaMCH/agent-ia-commercial-n8n.git",
+    "demo": null
   }
 ]

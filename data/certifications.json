@@ -1,38 +1,46 @@
 [
   {
     "id": "cert-algo1",
-    "name": {
+    "date": "2024",
+    "title": {
       "fr": "Algorithmique 1",
       "en": "Algorithmic 1"
     },
-    "issuer": "ATS",
-    "photo": "assets/certs/cert_algo1.jpg"
+    "org": "ATS",
+    "photo": "assets/certs/cert_algo1.jpg",
+    "badge": "Algo"
   },
   {
     "id": "cert-algo2",
-    "name": {
+    "date": "2024",
+    "title": {
       "fr": "Algo & Structures de données",
       "en": "Algorithms & Data Structures"
     },
-    "issuer": "TUSNA",
-    "photo": "assets/certs/cert_algo2.jpg"
+    "org": "TUSNA",
+    "photo": "assets/certs/cert_algo2.jpg",
+    "badge": "Algo"
   },
   {
     "id": "cert-python",
-    "name": {
+    "date": "2024",
+    "title": {
       "fr": "Développement de jeux en Python",
       "en": "Python Game Development"
     },
-    "issuer": "TUSNA",
-    "photo": "assets/certs/cert_python.jpg"
+    "org": "TUSNA",
+    "photo": "assets/certs/cert_python.jpg",
+    "badge": "Dev"
   },
   {
     "id": "cert-english",
-    "name": {
+    "date": "2024",
+    "title": {
       "fr": "General English B2",
       "en": "General English B2"
     },
-    "issuer": "Syken College",
-    "photo": "assets/certs/cert_english.jpg"
+    "org": "Syken College",
+    "photo": "assets/certs/cert_english.jpg",
+    "badge": "Langue"
   }
 ]

@@ -32,14 +32,50 @@ MyPortfolio est un site de présentation personnelle construit pour les recruteu
 - **PharmaGO** — application JavaFX pour la gestion de livraisons pharmaceutiques. https://github.com/ImeneeSh/PharmaGo
 - **Assirem Natation** — plateforme club en Vue.js 3 + Spring Boot. Site en production : https://www.assirem-natation.com/
 
-## Installation locale
+## Exécution locale (recommandé)
+
+Ce site charge des fichiers JSON via `fetch()` (dans `js/main.js`) et doit être servi via HTTP. Ouvrir
+`index.html` directement avec le protocole `file://` provoquera des erreurs de chargement (CORS/origine).
+
+Clonez le dépôt puis lancez un serveur HTTP local :
 
 ```bash
 git clone https://github.com/linaMCH/MyPortfolio.git
 cd MyPortfolio
+
+# Option 1 — Python 3 (intégré)
+python -m http.server 8000
+
+# Option 2 — script fourni (no-cache)
+python serve.py
+
+# Option 3 — Node.js (si installé)
+npx http-server -p 8000
+
+# Ensuite, ouvrez http://localhost:8000 dans votre navigateur
 ```
 
-Ouvrez `index.html` dans votre navigateur pour voir le site.
+Le dépôt contient également une démo publique : [Voir la démo en ligne](https://linamch.github.io/MyPortfolio/).
+
+Notes :
+- `serve.py` démarre un serveur HTTP sur le port `8000` et ajoute des en-têtes `no-cache` utiles pour
+	le développement (voir la description plus bas).
+- Pour la production, GitHub Pages ou tout hébergeur HTTP statique convient.
+
+## Optimisation des assets
+
+- Le fichier `logoLM.png` est actuellement committé à la racine du dépôt. Pour une meilleure organisation,
+  il est recommandé de le placer dans `assets/img/` et d'optimiser sa taille (WebP/AVIF ou compression PNG).
+- Exemples de commandes pour convertir / compresser (localement) :
+
+```bash
+# installer cwebp (Google) ou utiliser un outil GUI en local
+cwebp -q 80 logoLM.png -o assets/img/logoLM.webp
+# ou avec ImageMagick pour réduire la résolution et qualité
+magick convert logoLM.png -resize 300x300 -quality 85 assets/img/logoLM.png
+```
+
+Après optimisation, mettez à jour les références d'image dans `index.html` si nécessaire.
 
 ## Contact
 

@@ -1,199 +1,121 @@
-// Internationalization dictionary - Lina Maouche Portfolio
-
-const translations = {
+const t = {
   fr: {
-    // Navigation
-    "nav.about": "À propos",
-    "nav.skills": "Compétences",
-    "nav.projects": "Projets",
-    "nav.automation": "Automatisation",
-    "nav.certs": "Certifications",
-    "nav.contact": "Contact",
-
-    // Hero Section
-    "hero.intro": "Bonjour, je suis",
-    "hero.pitch": "Étudiante en 3ème année cycle ingénieur en Génie Logiciel, spécialisée en développement full-stack et automatisation. Expertise solide en Java et C++, attachée à la qualité du code, aux pratiques DevOps et aux architectures modernes.",
-    "hero.cta.projects": "Voir mes projets",
-    "hero.cta.cv": "Télécharger le CV",
-
-    // Hero Typewriter Subtitles
-    "hero.subtitles": [
-      "Développeuse Full-Stack",
-      "Ingénieure en Automatisation",
-      "Étudiante en Génie Logiciel"
+    nav: ["À propos", "Projets", "Certifs", "Compétences", "Contact"],
+    roles: [
+      "Étudiante Ingénieure en Génie Logiciel",
+      "Se forme aux agents IA",
+      "Passionnée par la sécurité de l'IA agentique"
     ],
-
-    // About Section
-    "about.title": "À propos de moi",
-    "about.subtitle": "Découvrez mon parcours et mes compétences clés",
-    "about.whoami": "Qui suis-je ?",
-    "about.bio": "Étudiante en 3ème année cycle ingénieur en Génie Logiciel à l'Université de Béjaïa, je me passionne pour le développement full-stack et l'automatisation. Mon parcours académique m'a permis d'acquérir une expertise solide en programmation structurée et orientée objet avec Java et C++, tout en renforçant mes compétences en administration système et intégration de services modernes. Mon engagement : produire un code propre, performant et hautement sécurisé en respectant les meilleures pratiques de l'architecture logicielle.",
-    
-    // About Stats
-    "about.stat.edu.title": "Formation",
-    "about.stat.edu.val": "ING3 — Université de Béjaïa",
-    "about.stat.loc.title": "Localisation",
-    "about.stat.loc.val": "Béjaïa, Algérie",
-    "about.stat.lang.title": "Langues",
-    "about.stat.lang.val": "FR / EN / Kabyle / AR",
-    "about.stat.status.title": "Disponibilité",
-    "about.stat.status.val": "Disponible pour stages & opportunités",
-
-    // Skills Section
-    "skills.title": "Compétences",
-    "skills.subtitle": "Mes outils, langages et expertises techniques",
-    "skills.cat.languages": "Langages de programmation",
-    "skills.cat.frontend": "Web & Frontend",
-    "skills.cat.databases": "Bases de données",
-    "skills.cat.devops": "Outils & DevOps",
-    "skills.cat.security": "Sécurité & Automatisation",
-    "skills.cat.ai-automation": "Automatisation & IA",
-
-    // Projects Section
-    "projects.title": "Projets récents",
-    "projects.subtitle": "Découvrez une sélection de mes réalisations académiques et personnelles",
-    "projects.filter.all": "Tous",
-    "projects.filter.fullstack": "Full-Stack",
-    "projects.filter.security": "Sécurité",
-    "projects.filter.automation": "Automatisation",
-    "projects.filter.ai": "IA & n8n",
-    "projects.btn.github": "Voir sur GitHub",
-    "projects.collab.with": "Collaboration avec",
-    "projects.collab.team": "Projet en équipe avec",
-    "projects.role.label": "Mon rôle :",
-    "projects.repo.private": "Dépôt privé — disponible sur demande",
-    "projects.workflow.label": "Workflow n8n",
-    "projects.complexity.label": "Complexité :",
-
-    // n8n Automation Section
-    "automation.title": "Formation n8n",
-    "automation.subtitle": "7 jours de pratique intensive en automatisation de workflows et architecture d'agents IA",
-    "automation.tag": "Juillet 2026 — Formation intensive 7 jours",
-    "automation.intro.fr": "Cinq workflows construits sur n8n couvrant l'ensemble du spectre — du traitement de formulaires à l'architecture d'agents IA avec mémoire et base de connaissances.",
-    "automation.skills.label": "Compétences transverses",
-    "automation.complexity.beginner": "Débutant",
-    "automation.complexity.intermediate": "Intermédiaire",
-    "automation.complexity.advanced": "Avancé",
-
-    // Certifications Section
-    "certs.title": "Certifications",
-    "certs.subtitle": "Mes accréditations et formations complémentaires",
-    "certs.btn.view": "Voir le certificat",
-
-    // Contact Section
-    "contact.title": "Entrons en contact",
-    "contact.subtitle": "Une opportunité, un projet ou une question ? N'hésitez pas !",
-    "contact.invite": "Je suis actuellement ouverte aux opportunités de stage de fin d'études et aux projets de collaboration dans le domaine du génie logiciel, du web et de l'automatisation.",
-    "contact.card.linkedin": "LinkedIn",
-    "contact.card.github": "GitHub",
-    "contact.card.email": "Email",
-    "contact.card.phone": "Téléphone",
-    "contact.cta.cv": "Télécharger mon CV (PDF)",
-
-    // Footer
-    "footer.builtby": "Conçu & réalisé par Lina Maouche",
-    "footer.rights": "Tous droits réservés",
-    
-    // Lightbox / Accessibility
-    "lightbox.close": "Fermer"
+    desc: "Je construis des logiciels solides, avec un œil sur l'IA de demain : utile, fiable, sécurisée.",
+    cta: "Explorer mon univers",
+    cv: "Mon CV",
+    quote: "« Concevoir des systèmes intelligents, c'est bien. Les rendre dignes de confiance, c'est mon ambition. »",
+    keywords: [
+      "Curieuse", "Dévouée", "Esprit d'équipe", "Apprentissage continu",
+      "Rigoureuse", "Adaptable", "Autonome", "Force de proposition"
+    ],
+    aboutLabel: "Éducation & parcours",
+    philoTitle: "Qualités",
+    expLabel: "Expérience professionnelle",
+    expJob: "Stagiaire DSI",
+    expCompany: "Cevital, Béjaïa",
+    expYears: "2026 — Auj.",
+    expSkillsKey: "Infrastructure réseau · Cybersécurité (SIEM, pfSense) · SAP S/4HANA · Sage X3 · Power BI · Data Warehouse · n8n · Docker",
+    projLabel: "Portfolio de réalisations",
+    projTitle: "Projets sélectionnés",
+    filterAll: "Tous",
+    explore: "Explorer le projet",
+    code: "Code",
+    demo: "Démo",
+    certLabel: "Certifications",
+    certTitle: "Apprentissage continu",
+    seeCert: "Voir le certificat",
+    skillsLabel: "Expertise technique",
+    skillsTitle: "Compétences techniques",
+    langLabel: "Langues & centres d'intérêt",
+    langTitle: "Au-delà du code",
+    langsSub: "Langues",
+    intSub: "Centres d'intérêt",
+    together: "Ouverte aux opportunités professionnelles.",
+    rights: "Tous droits réservés."
   },
   en: {
-    // Navigation
-    "nav.about": "About",
-    "nav.skills": "Skills",
-    "nav.projects": "Projects",
-    "nav.automation": "Automation",
-    "nav.certs": "Certifications",
-    "nav.contact": "Contact",
-
-    // Hero Section
-    "hero.intro": "Hi, I am",
-    "hero.pitch": "Software Engineering student (ING3) specializing in full-stack development and automation. Strong expertise in Java and C++, committed to code quality, DevOps practices, and modern software architectures.",
-    "hero.cta.projects": "View My Projects",
-    "hero.cta.cv": "Download CV",
-
-    // Hero Typewriter Subtitles
-    "hero.subtitles": [
-      "Full-Stack Developer",
-      "Automation Engineer",
-      "Software Engineering Student"
+    nav: ["About", "Projects", "Certs", "Skills", "Contact"],
+    roles: [
+      "Software Engineering student",
+      "Learning to build AI agents",
+      "Passionate about agentic AI security"
     ],
-
-    // About Section
-    "about.title": "About Me",
-    "about.subtitle": "Discover my journey and core competencies",
-    "about.whoami": "Who am I?",
-    "about.bio": "Software Engineering student (ING3) at the University of Béjaïa, deeply passionate about full-stack development and automation. My academic journey has enabled me to build a solid foundation in structured and object-oriented programming with Java and C++, while expanding my knowledge in system administration and modern service integrations. My commitment: delivering clean, high-performance, and secure code following industry-standard software architectures.",
-    
-    // About Stats
-    "about.stat.edu.title": "Education",
-    "about.stat.edu.val": "ING3 — Université de Béjaïa",
-    "about.stat.loc.title": "Location",
-    "about.stat.loc.val": "Béjaïa, Algeria",
-    "about.stat.lang.title": "Languages",
-    "about.stat.lang.val": "FR / EN / Kabyle / AR",
-    "about.stat.status.title": "Availability",
-    "about.stat.status.val": "Available for internships & opportunities",
-
-    // Skills Section
-    "skills.title": "Skills",
-    "skills.subtitle": "My technical stack, tools, and fields of expertise",
-    "skills.cat.languages": "Programming Languages",
-    "skills.cat.frontend": "Web & Frontend",
-    "skills.cat.databases": "Databases",
-    "skills.cat.devops": "Tools & DevOps",
-    "skills.cat.security": "Security & Automation",
-    "skills.cat.ai-automation": "Automation & AI",
-
-    // Projects Section
-    "projects.title": "Recent Projects",
-    "projects.subtitle": "Explore a curated selection of my academic and personal projects",
-    "projects.filter.all": "All",
-    "projects.filter.fullstack": "Full-Stack",
-    "projects.filter.security": "Security",
-    "projects.filter.automation": "Automation",
-    "projects.filter.ai": "AI & n8n",
-    "projects.btn.github": "View on GitHub",
-    "projects.collab.with": "Collaboration with",
-    "projects.collab.team": "Team project with",
-    "projects.role.label": "My role:",
-    "projects.repo.private": "Private repository — available on request",
-    "projects.workflow.label": "n8n Workflow",
-    "projects.complexity.label": "Complexity:",
-
-    // n8n Automation Section
-    "automation.title": "n8n Training",
-    "automation.subtitle": "7 days of intensive practice in workflow automation and AI agent architecture",
-    "automation.tag": "July 2026 — 7-day intensive training",
-    "automation.intro.en": "Five workflows built on n8n covering the full spectrum — from form processing to AI agent architecture with memory and knowledge bases.",
-    "automation.skills.label": "Cross-cutting skills",
-    "automation.complexity.beginner": "Beginner",
-    "automation.complexity.intermediate": "Intermediate",
-    "automation.complexity.advanced": "Advanced",
-
-    // Certifications Section
-    "certs.title": "Certifications",
-    "certs.subtitle": "My professional credentials and training achievements",
-    "certs.btn.view": "View Certificate",
-
-    // Contact Section
-    "contact.title": "Let's Connect",
-    "contact.subtitle": "An opportunity, a project, or just a question? Feel free to reach out!",
-    "contact.invite": "I am currently open to end-of-study internships, jobs, and collaboration opportunities in software engineering, web development, and automation.",
-    "contact.card.linkedin": "LinkedIn",
-    "contact.card.github": "GitHub",
-    "contact.card.email": "Email",
-    "contact.card.phone": "Phone",
-    "contact.cta.cv": "Download My CV (PDF)",
-
-    // Footer
-    "footer.builtby": "Designed & built by Lina Maouche",
-    "footer.rights": "All rights reserved",
-    
-    // Lightbox / Accessibility
-    "lightbox.close": "Close"
+    desc: "I build solid software with an eye on tomorrow's AI: useful, reliable, secure.",
+    cta: "Explore my world",
+    cv: "My resume",
+    quote: "“Building intelligent systems is good. Making them trustworthy is my ambition.”",
+    keywords: [
+      "Curious", "Dedicated", "Team player", "Lifelong learner",
+      "Rigorous", "Adaptable", "Autonomous", "Proactive"
+    ],
+    aboutLabel: "Education & journey",
+    philoTitle: "Qualities",
+    expLabel: "Professional experience",
+    expJob: "IT Department Intern",
+    expCompany: "Cevital, Bejaïa",
+    expYears: "2026 — Now",
+    expSkillsKey: "Network Infrastructure · Cybersecurity (SIEM, pfSense) · SAP S/4HANA · Sage X3 · Power BI · Data Warehouse · n8n · Docker",
+    projLabel: "Selected portfolio",
+    projTitle: "Featured projects",
+    filterAll: "All",
+    explore: "Explore project",
+    code: "Code",
+    demo: "Demo",
+    certLabel: "Certifications",
+    certTitle: "Continuous learning",
+    seeCert: "View certificate",
+    skillsLabel: "Technical expertise",
+    skillsTitle: "Technical skills",
+    langLabel: "Languages & interests",
+    langTitle: "Beyond code",
+    langsSub: "Languages",
+    intSub: "Interests",
+    together: "Open to professional opportunities.",
+    rights: "All rights reserved."
   }
 };
 
-// Expose dictionary globally for other scripts
-window.portfolioTranslations = translations;
+const educationData = [
+  {
+    years: "2023 — Présent",
+    yearsEn: "2023 — Present",
+    fr: ["Cycle Ingénieur d'État en Informatique, Spécialité Génie Logiciel", "Univ. Abderrahmane Mira, Bejaïa"],
+    en: ["State Engineering Degree in Computer Science, Software Engineering", "Abderrahmane Mira University, Bejaïa"]
+  },
+  {
+    years: "2022 — 2023",
+    yearsEn: "2022 — 2023",
+    fr: ["Bac Mathématiques", "Mention Très Bien"],
+    en: ["Baccalaureate in Mathematics", "Highest honors"]
+  },
+  {
+    years: "Primaire · Collège · Lycée",
+    yearsEn: "Primary · Middle · High school",
+    fr: ["Scolarité", "École Privée Les Iris"],
+    en: ["Schooling", "Les Iris Private School"]
+  }
+];
+
+const languagesData = [
+  { name: { fr: "Kabyle", en: "Kabyle" }, level: { fr: "Maternelle", en: "Native" } },
+  { name: { fr: "Darija", en: "Darija" }, level: { fr: "Maternelle", en: "Native" } },
+  { name: { fr: "Français", en: "French" }, level: { fr: "Courant", en: "Fluent" } },
+  { name: { fr: "Arabe", en: "Arabic" }, level: { fr: "Courant", en: "Fluent" } },
+  { name: { fr: "Anglais", en: "English" }, level: { fr: "C2 · Avancé", en: "C2 · Advanced" } },
+  { name: { fr: "Espagnol", en: "Spanish" }, level: { fr: "Débutant · en apprentissage", en: "Beginner · learning" } }
+];
+
+const interestsData = [
+  { icon: "book-open", fr: "Lecture", en: "Reading" },
+  { icon: "pen-line", fr: "Journaling", en: "Journaling" },
+  { icon: "plane", fr: "Voyages", en: "Travel" },
+  { icon: "film", fr: "Cinématographie", en: "Cinematography" },
+  { icon: "utensils", fr: "Cuisine", en: "Cooking" },
+  { icon: "shirt", fr: "Mode", en: "Fashion" }
+];
