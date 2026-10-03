@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   let isDark = true;
   let menuOpen = false;
   let activeFilter = "all";
+  let activeCertFilter = "all";
+  let certsCurrentPage = 0;
 
   // Data stores
   let projectsData = [];
@@ -439,7 +441,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // Document & HTML meta
     htmlEl.lang = currentLang;
-    document.title = `Lina Maouche — ${currentLang === 'fr' ? 'Étudiante Ingénieure en Génie Logiciel' : 'Software Engineering student'}`;
+    document.title = c.pageTitle;
+    document.querySelector('meta[name="description"]')?.setAttribute("content", c.metaDescription);
+    document.querySelector('meta[property="og:title"]')?.setAttribute("content", c.pageTitle);
+    document.querySelector('meta[property="og:description"]')?.setAttribute("content", c.metaDescription);
 
     // Nav text
     const navItems = document.querySelectorAll("[data-nav-index]");
@@ -570,7 +575,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         `;
 
         return `
-          <article data-reveal class="project-card group" data-category="${p.category || ''}" data-tag="${tagText}">
+          <article data-reveal class="project-card group${p.id === "n8n-suite" ? " project-card--n8n" : ""}" data-category="${p.category || ''}" data-tag="${tagText}">
             <div class="project-img-wrapper">
               <img src="${p.image}" alt="${p.title}" loading="lazy" class="project-img" />
             </div>
@@ -605,16 +610,65 @@ document.addEventListener("DOMContentLoaded", async () => {
       });
     }
 
-    // Render Certifications Carousel (Task 6 & Task 10)
+    // Render certification filters, cards, and carousel pagination
     const certsTrack = document.getElementById("certs-track");
-    if (certsTrack && certsData.length > 0) {
+    const certsFilters = document.getElementById("certs-filters");
+    const certsPagination = document.getElementById("certs-pagination");
+    const certPrevBtn = document.getElementById("certs-prev-btn");
+    const certNextBtn = document.getElementById("certs-next-btn");
+    const categoryLabels = {
+      algorithms: c.certFilterAlgorithms,
+      development: c.certFilterDevelopment,
+      languages: c.certFilterLanguages,
+      "ai-agents": c.certFilterAiAgents
+    };
+
+    if (certsFilters && certsTrack && certsData.length > 0) {
+      const certCategories = [...new Set(certsData.map((cert) => cert.category).filter(Boolean))];
+      const certFilters = [
+        { id: "all", label: c.certFilterAll },
+        ...certCategories.map((id) => ({ id, label: categoryLabels[id] || id }))
+      ];
+
+      certsFilters.setAttribute("aria-label", c.certFilterLabel);
+      certsFilters.innerHTML = certFilters.map((filter) => `
+        <button type="button" class="filter-btn ${activeCertFilter === filter.id ? "active" : ""}"
+          data-cert-filter="${filter.id}" aria-pressed="${activeCertFilter === filter.id}">
+          ${filter.label}
+        </button>
+      `).join("");
+
       certsTrack.innerHTML = certsData.map((ce) => {
         const titleText = typeof ce.title === "object" ? ce.title[currentLang] : ce.title;
         const orgText = typeof ce.org === "object" ? ce.org[currentLang] : ce.org;
-        const badgeHtml = ce.badge ? `<span class="cert-badge label-mono">${ce.badge}</span>` : "";
+        const badgeText = ce.category === "ai-agents" ? c.certFilterAiAgents : ce.badge;
+        const badgeHtml = badgeText ? `<span class="cert-badge label-mono">${badgeText}</span>` : "";
+        const certificateAction = ce.photo ? `
+          <button type="button" class="btn-action-secondary cert-link" data-cert-photo="${ce.photo}" data-cert-title="${titleText}" data-cert-org="${orgText}">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            ${c.seeCert}
+          </button>
+        ` : ce.document ? `
+          <a href="${ce.document}" target="_blank" rel="noopener noreferrer" class="btn-action-secondary cert-link">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/></svg>
+            ${c.seeCert}
+          </a>
+        ` : "";
+        const verifyAction = ce.verifyUrl ? `
+          <a href="${ce.verifyUrl}" target="_blank" rel="noopener noreferrer" class="btn-action-secondary cert-link">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 12 2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            ${c.certVerify}
+          </a>
+        ` : "";
+        const trainingAction = ce.trainingUrl ? `
+          <a href="${ce.trainingUrl}" target="_blank" rel="noopener noreferrer" class="btn-action-secondary cert-link cert-training-link">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+            ${c.certTraining}
+          </a>
+        ` : "";
 
         return `
-          <div class="cert-card glass rounded-2xl">
+          <article class="cert-card glass rounded-2xl" data-category="${ce.category || ""}">
             ${badgeHtml}
             <div class="cert-icon">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg>
@@ -622,17 +676,18 @@ document.addEventListener("DOMContentLoaded", async () => {
             <p class="cert-date">${ce.date}</p>
             <h3 class="cert-title">${titleText}</h3>
             <p class="cert-org">${orgText}</p>
-            <div style="margin-top: 1.25rem;">
-              <button type="button" class="btn-action-secondary cert-link" data-cert-photo="${ce.photo}" data-cert-title="${titleText}" data-cert-org="${orgText}">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                ${c.seeCert}
-              </button>
+            ${ce.certificateId ? `<p class="cert-id">${c.certIdLabel} : ${ce.certificateId}</p>` : ""}
+            <div class="cert-actions">
+              ${verifyAction}
+              ${certificateAction}
+              ${trainingAction}
             </div>
-          </div>
+          </article>
         `;
       }).join("");
 
       certsTrack.querySelectorAll(".cert-link").forEach((btn) => {
+        if (btn.tagName !== "BUTTON") return;
         btn.addEventListener("click", () => {
           const photo = btn.getAttribute("data-cert-photo");
           const title = btn.getAttribute("data-cert-title");
@@ -640,6 +695,96 @@ document.addEventListener("DOMContentLoaded", async () => {
           openGalleryLightbox([{ image: photo, title: "" }], 0, title, org);
         });
       });
+
+      function visibleCertCards() {
+        return [...certsTrack.querySelectorAll(".cert-card")].filter((card) => !card.hidden);
+      }
+
+      function certsPerPage() {
+        if (window.matchMedia("(min-width: 1024px)").matches) return 3;
+        if (window.matchMedia("(min-width: 640px)").matches) return 2;
+        return 1;
+      }
+
+      function updateCertPagination(scrollToPage = false) {
+        const cards = visibleCertCards();
+        const perPage = certsPerPage();
+        const pageCount = Math.ceil(cards.length / perPage);
+        certsCurrentPage = Math.min(certsCurrentPage, Math.max(pageCount - 1, 0));
+        if (scrollToPage && cards.length) {
+          const card = cards[certsCurrentPage * perPage];
+          const left = card.getBoundingClientRect().left - certsTrack.getBoundingClientRect().left + certsTrack.scrollLeft;
+          certsTrack.scrollTo({ left, behavior: "smooth" });
+        }
+
+        if (certsPagination) {
+          certsPagination.setAttribute("aria-label", t[currentLang].certPagesLabel);
+          certsPagination.innerHTML = Array.from({ length: pageCount }, (_, page) => `
+            <button type="button" class="cert-pagination-dot ${page === certsCurrentPage ? "active" : ""}"
+              aria-label="${currentLang === "fr" ? "Page" : "Page"} ${page + 1}" aria-current="${page === certsCurrentPage ? "page" : "false"}"
+              data-cert-page="${page}"></button>
+          `).join("");
+          certsPagination.querySelectorAll(".cert-pagination-dot").forEach((button) => {
+            button.addEventListener("click", () => {
+              certsCurrentPage = Number(button.getAttribute("data-cert-page"));
+              updateCertPagination(true);
+            });
+          });
+        }
+
+        if (certPrevBtn) {
+          certPrevBtn.disabled = certsCurrentPage === 0;
+          certPrevBtn.setAttribute("aria-label", t[currentLang].certPrevious);
+        }
+        if (certNextBtn) {
+          certNextBtn.disabled = pageCount === 0 || certsCurrentPage >= pageCount - 1;
+          certNextBtn.setAttribute("aria-label", t[currentLang].certNext);
+        }
+      }
+
+      function applyCertFilter() {
+        certsCurrentPage = 0;
+        certsFilters.querySelectorAll("[data-cert-filter]").forEach((button) => {
+          const isActive = button.getAttribute("data-cert-filter") === activeCertFilter;
+          button.classList.toggle("active", isActive);
+          button.setAttribute("aria-pressed", String(isActive));
+        });
+        certsTrack.querySelectorAll(".cert-card").forEach((card) => {
+          card.hidden = activeCertFilter !== "all" && card.getAttribute("data-category") !== activeCertFilter;
+        });
+        updateCertPagination(true);
+      }
+
+      certsFilters.querySelectorAll("[data-cert-filter]").forEach((button) => {
+        button.addEventListener("click", () => {
+          activeCertFilter = button.getAttribute("data-cert-filter") || "all";
+          applyCertFilter();
+        });
+      });
+
+      if (!certsTrack.dataset.paginationBound) {
+        certsTrack.dataset.paginationBound = "true";
+        certsTrack.addEventListener("scroll", () => {
+          const cards = visibleCertCards();
+          const perPage = certsPerPage();
+          if (!cards.length) return;
+          let closestPage = 0;
+          let closestDistance = Infinity;
+          for (let page = 0; page < Math.ceil(cards.length / perPage); page++) {
+            const card = cards[page * perPage];
+            const targetLeft = card.getBoundingClientRect().left - certsTrack.getBoundingClientRect().left + certsTrack.scrollLeft;
+            const distance = Math.abs(targetLeft - certsTrack.scrollLeft);
+            if (distance < closestDistance) {
+              closestDistance = distance;
+              closestPage = page;
+            }
+          }
+          certsCurrentPage = closestPage;
+          updateCertPagination();
+        }, { passive: true });
+        window.addEventListener("resize", () => updateCertPagination(true));
+      }
+      applyCertFilter();
     }
 
     // Render Technical Skills Grid
@@ -647,11 +792,18 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (skillsGrid && skillsData.length > 0) {
       skillsGrid.innerHTML = skillsData.map((s) => {
         const titleText = typeof s.title === "object" ? s.title[currentLang] : s.title;
+        const skillIcons = {
+          languages: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m8 5-6 7 6 7"/><path d="m16 5 6 7-6 7"/><path d="m14 3-4 18"/></svg>',
+          frontend: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M2 8h20"/><path d="m8 13-2 2 2 2"/><path d="m16 13 2 2-2 2"/><path d="m14 12-3 6"/></svg>',
+          databases: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5"/><path d="M3 12c0 1.7 4 3 9 3s9-1.3 9-3"/></svg>',
+          devops: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 8a4 4 0 1 0 4 4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/><path d="m14 10 6-6m-5 0h5v5"/></svg>',
+          security: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/><path d="m9 12 2 2 4-4"/></svg>',
+          "ai-automation": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="7" width="16" height="13" rx="3"/><path d="M12 3v4m-4 5h.01M16 12h.01M9 16h6"/><path d="M2 12h2m16 0h2"/></svg>',
+          "dsi-industry": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21V8l6 3V8l6 3V4h6v17Z"/><path d="M17 8h.01M17 12h.01M7 15h.01M11 15h.01M15 15h.01M7 18h.01M11 18h.01M15 18h.01"/></svg>'
+        };
         return `
           <div data-reveal class="skill-card glass rounded-2xl">
-            <div class="skill-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-            </div>
+            <div class="skill-icon" aria-hidden="true">${skillIcons[s.category] || '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m12 3 1.9 5.8L20 11l-6.1 2.2L12 19l-1.9-5.8L4 11l6.1-2.2L12 3Z"/><path d="m19 14 1.2 2.8L23 18l-2.8 1.2L19 22l-1.2-2.8L15 18l2.8-1.2L19 14Z"/></svg>'}</div>
             <h3 class="skill-title">${titleText}</h3>
             <p class="skill-items">${s.items}</p>
           </div>
@@ -745,14 +897,16 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   if (certPrevBtn) {
     certPrevBtn.addEventListener("click", () => {
-      const track = document.getElementById("certs-track");
-      if (track) track.scrollBy({ left: -(track.clientWidth * 0.8), behavior: "smooth" });
+      const activePage = document.querySelector("#certs-pagination .cert-pagination-dot.active");
+      const page = activePage ? Number(activePage.getAttribute("data-cert-page")) : 0;
+      document.querySelector(`#certs-pagination [data-cert-page="${Math.max(0, page - 1)}"]`)?.click();
     });
   }
   if (certNextBtn) {
     certNextBtn.addEventListener("click", () => {
-      const track = document.getElementById("certs-track");
-      if (track) track.scrollBy({ left: track.clientWidth * 0.8, behavior: "smooth" });
+      const activePage = document.querySelector("#certs-pagination .cert-pagination-dot.active");
+      const page = activePage ? Number(activePage.getAttribute("data-cert-page")) : 0;
+      document.querySelector(`#certs-pagination [data-cert-page="${page + 1}"]`)?.click();
     });
   }
 

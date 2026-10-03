@@ -8,7 +8,8 @@
     },
     "org": "ATS",
     "photo": "assets/certs/cert_algo1.jpg",
-    "badge": "Algo"
+    "badge": "Algo",
+    "category": "algorithms"
   },
   {
     "id": "cert-algo2",
@@ -19,7 +20,8 @@
     },
     "org": "TUSNA",
     "photo": "assets/certs/cert_algo2.jpg",
-    "badge": "Algo"
+    "badge": "Algo",
+    "category": "algorithms"
   },
   {
     "id": "cert-python",
@@ -30,7 +32,8 @@
     },
     "org": "TUSNA",
     "photo": "assets/certs/cert_python.jpg",
-    "badge": "Dev"
+    "badge": "Dev",
+    "category": "development"
   },
   {
     "id": "cert-english",
@@ -41,6 +44,25 @@
     },
     "org": "Syken College",
     "photo": "assets/certs/cert_english.jpg",
-    "badge": "Langue"
+    "badge": "Langue",
+    "category": "languages"
+  },
+  {
+    "id": "cert-understanding-agentic-ai",
+    "date": "03/10/2026",
+    "title": {
+      "fr": "Understanding Agentic AI",
+      "en": "Understanding Agentic AI"
+    },
+    "org": {
+      "fr": "Agent Academy (fourni par Digital Workforce Services Plc)",
+      "en": "Agent Academy (provided by Digital Workforce Services Plc)"
+    },
+    "badge": "IA / Agents",
+    "category": "ai-agents",
+    "certificateId": "6ac14671196faed1c30564f5",
+    "document": "assets/certs/cert_understanding_agentic_ai.pdf",
+    "verifyUrl": "https://mycourse.app/iQmcfWXeF9jxc4dLZ",
+    "trainingUrl": "https://learn.agentacademy.ai/path-player?courseid=understanding-agentic-ai"
   }
 ]

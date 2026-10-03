@@ -88,7 +88,7 @@
       "fr": "Suite de workflows et agents IA autonomes (RAG, mémoire conversationnelle, triage Gmail & Notion, parsing JSON).",
       "en": "Suite of autonomous AI agents & workflows (RAG, memory buffer, Gmail & Notion triage, JSON parsing)."
     },
-    "image": "assets/img/projects/RAG_retrieverFlow.png",
+    "image": "assets/img/projects/n8n-logo-cover.png",
     "gallery": [
       { "title": { "fr": "Assistant RAG Vector Store", "en": "Vector Store RAG Assistant" }, "image": "assets/img/projects/RAG_retrieverFlow.png" },
       { "title": { "fr": "Trieur d'e-mails intelligent (Gmail & Slack)", "en": "Smart Email Classifier (Gmail & Slack)" }, "image": "assets/img/projects/trieur_mail_urgent.png" },
