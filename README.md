@@ -12,9 +12,10 @@ MyPortfolio est un site de présentation personnelle construit pour les recruteu
 
 - Navigation ancrée avec menu mobile responsive
 - Thème sombre / clair et contenu bilingue français / anglais
-- Sections dynamiques de compétences, projets et certifications chargées depuis des fichiers JSON
-- Filtrage de projets et affichage de cartes projet
-- Lightbox pour les certificats et lien de téléchargement du CV
+- Sections de compétences, projets et certifications chargées depuis des fichiers JSON
+- Filtrage des projets par catégorie et affichage des détails dans une galerie interactive
+- Certifications filtrables avec navigation par pages et aperçu des justificatifs
+- Téléchargement du CV et affichage responsive sur mobile et ordinateur
 
 ## Stack technique
 
@@ -30,7 +31,11 @@ MyPortfolio est un site de présentation personnelle construit pour les recruteu
 - **Compilateur C → Java** — parseur et analyseur syntaxique/sémantique en Java. https://github.com/linaMCH/Compilateur-C
 - **StegaCrypt** — application de cryptographie et stéganographie en Python. https://github.com/ImeneeSh/StegaCrypt
 - **PharmaGO** — application JavaFX pour la gestion de livraisons pharmaceutiques. https://github.com/ImeneeSh/PharmaGo
-- **Assirem Natation** — plateforme club en Vue.js 3 + Spring Boot. Site en production : https://www.assirem-natation.com/
+- **DzMarket** — place de marché algérienne. [Voir la démo](https://dz-market-mu.vercel.app/)
+- **Assirem Natation** — site web du club. [Voir le site](https://www.assirem-natation.com/)
+- **Automatisations & Agents IA (n8n)** — workflows RAG, mémoire conversationnelle, triage d'e-mails et intégration Notion. La couverture n8n accompagne une galerie de captures des workflows. https://github.com/linaMCH/agent-ia-commercial-n8n
+
+Les projets, leurs descriptions et leurs galeries sont configurés dans [`data/projects.json`](data/projects.json). Les compétences et les certifications sont définies dans [`data/skills.json`](data/skills.json) et [`data/certifications.json`](data/certifications.json).
 
 ## Exécution locale (recommandé)
 
